@@ -2,8 +2,8 @@
 (  
     IdEntrega INT NOT NULL IDENTITY(1,1) CONSTRAINT PK_Entrega PRIMARY KEY CLUSTERED(IdEntrega)
   , FechaEntrega DATE NOT NULL 
-  , Destino VARCHAR(250) NOT NULL
-  , Camion VARCHAR(250) NOT NULL
+  , Destino VARCHAR(250) NOT NULL 
+  , IdCamion INT NOT NULL CONSTRAINT FK_Entrega_Camion FOREIGN KEY(IdCamion) REFERENCES dbo.Camion(IdCamion)
   , Estado BIT NOT NULL
 )
 WITH (DATA_COMPRESSION=PAGE)

@@ -71,10 +71,13 @@
   <ItemGroup>
     <Build Include="dbo\Tables\Pedidos\Camion.sql" />
     <Build Include="dbo\Tables\Pedidos\Conductor.sql" />
-    <Build Include="dbo\Tables\Pedidos\CatalogoProvincia.sql" />
-    <Build Include="dbo\Tables\Pedidos\CatalogoDistrito.sql" />
-    <Build Include="dbo\Tables\Pedidos\CatalogoCanton.sql" />
     <Build Include="dbo\Tables\Pedidos\Pedido.sql" />
     <Build Include="dbo\Tables\Entregas\Entrega.sql" />
+    <Build Include="dbo\Tables\Entregas\CatalogoProvincia.sql" />
+    <Build Include="dbo\Tables\Entregas\CatalogoDistrito.sql" />
+    <Build Include="dbo\Tables\Entregas\CatalogoCanton.sql" />
+    <Build Include="dbo\Tables\Productos\Productos.sql" />
+    <Build Include="dbo\Tables\Productos\Categoria.sql" />
+    <Build Include="dbo\Tables\Clientes\Cliente.sql" />
   </ItemGroup>
 </Project>
