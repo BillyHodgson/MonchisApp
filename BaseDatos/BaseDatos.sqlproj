@@ -79,5 +79,6 @@
     <Build Include="dbo\Tables\Productos\Productos.sql" />
     <Build Include="dbo\Tables\Productos\Categoria.sql" />
     <Build Include="dbo\Tables\Clientes\Cliente.sql" />
+    <Build Include="dbo\StoreProcedures\Productos\ProductosInsertar.sql" />
   </ItemGroup>
 </Project>
