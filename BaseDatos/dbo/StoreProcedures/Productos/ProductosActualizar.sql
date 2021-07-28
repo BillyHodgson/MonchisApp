@@ -1,5 +1,5 @@
-﻿CREATE PROCEDURE [dbo].[ProductosInsertar]
-	@IdProducto INT,
+﻿CREATE PROCEDURE [dbo].[ProductosActualizar]
+	@IdProducto INT ,
 	@IdCategoria INT,
 	@Nombre VARCHAR(250),
 	@Cantidad INT,
@@ -12,10 +12,20 @@ AS
 	BEGIN TRANSACTION TRASA
 
 	BEGIN TRY
+	--METODO
 
-	INSERT INTO Productos (IdProducto,IdCategoria,Nombre,Cantidad,Caracteristicas,Estado)
+	UPDATE Productos
+	SET
+	IdCategoria=@IdCategoria,
+	Nombre=@Nombre,
+	Cantidad=@Cantidad,
+	Caracteristicas=@Caracteristicas,
+	Estado=@Estado
 
-	VALUES (@IdProducto,@IdCategoria,@Nombre,@Cantidad,@Caracteristicas,@Estado)
+	WHERE 
+
+		IdProducto=@IdProducto
+	
 
 	COMMIT TRANSACTION TRASA
 

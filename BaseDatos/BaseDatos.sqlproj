@@ -80,5 +80,13 @@
     <Build Include="dbo\Tables\Productos\Categoria.sql" />
     <Build Include="dbo\Tables\Clientes\Cliente.sql" />
     <Build Include="dbo\StoreProcedures\Productos\ProductosInsertar.sql" />
+    <Build Include="dbo\StoreProcedures\Productos\ProductosObtener.sql" />
+    <Build Include="dbo\StoreProcedures\Productos\ProductosActualizar.sql" />
+    <Build Include="dbo\StoreProcedures\Productos\ProductosEliminar.sql" />
+    <Build Include="dbo\StoreProcedures\Productos\CategoriaObtener.sql" />
+    <Build Include="dbo\StoreProcedures\Productos\CategoriaInsertar.sql" />
+    <Build Include="dbo\StoreProcedures\Productos\CategoriaActualizar.sql" />
+    <Build Include="dbo\StoreProcedures\Productos\CategoriaEliminar.sql" />
+    <Build Include="dbo\StoreProcedures\Productos\CategoriaLista.sql" />
   </ItemGroup>
 </Project>
