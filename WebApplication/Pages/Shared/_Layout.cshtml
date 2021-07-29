@@ -4,13 +4,52 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <base href="/" />
-    <title>@ViewData["Title"] - WebApplication</title>
-   
+    <title>@ViewData["Title"] - WebApp</title>
+    @await Html.PartialAsync("_HeaderPartial")
 </head>
 <body>
-  
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark py-0" style="background-color: #4B505E">
+        <div class="container-fluid">
+            <img src="~/Assets/Images/logo_banner.svg" height="30px" style="padding-right:5em"/>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" asp-page="/Index">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-page="/">Clientes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-page="/">Productos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-page="/">Pedidos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-page="/">Entregas</a>
+                    </li>
+                </ul>
+                <div class="d-flex">
+                    <div class="dropdown dropstart">
+                        <a class="nav-link dropdown-toggle text-white" href="#" id="navbarLoginUser" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            User
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarLoginUser">
+                            <li><a class="dropdown-item" href="#">Cerrar Sesión</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <br />
     @RenderBody()
-  
+
+    @await Html.PartialAsync("_ScriptsPartial")
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
