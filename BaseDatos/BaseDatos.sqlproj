@@ -67,6 +67,7 @@
     <Folder Include="dbo\StoreProcedures\Entregas" />
     <Folder Include="dbo\StoreProcedures\Pedidos" />
     <Folder Include="dbo\StoreProcedures\Productos" />
+    <Folder Include="dbo\StoreProcedures\Pedidos\Conductor" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Tables\Pedidos\Camion.sql" />
@@ -88,5 +89,8 @@
     <Build Include="dbo\StoreProcedures\Productos\CategoriaActualizar.sql" />
     <Build Include="dbo\StoreProcedures\Productos\CategoriaEliminar.sql" />
     <Build Include="dbo\StoreProcedures\Productos\CategoriaLista.sql" />
+    <Build Include="dbo\StoreProcedures\Pedidos\Conductor\ConductorObtener.sql" />
+    <Build Include="dbo\StoreProcedures\Pedidos\Conductor\ConductorInsertar.sql" />
+    <Build Include="dbo\StoreProcedures\Pedidos\Conductor\ConductorEliminar.sql" />
   </ItemGroup>
 </Project>
