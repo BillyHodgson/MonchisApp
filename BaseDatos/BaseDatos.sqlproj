@@ -67,11 +67,10 @@
     <Folder Include="dbo\StoreProcedures\Entregas" />
     <Folder Include="dbo\StoreProcedures\Pedidos" />
     <Folder Include="dbo\StoreProcedures\Productos" />
-    <Folder Include="dbo\StoreProcedures\Pedidos\Conductor" />
+    <Folder Include="dbo\StoreProcedures\Entregas\Conductor" />
+    <Folder Include="dbo\StoreProcedures\Entregas\Camion" />
   </ItemGroup>
   <ItemGroup>
-    <Build Include="dbo\Tables\Pedidos\Camion.sql" />
-    <Build Include="dbo\Tables\Pedidos\Conductor.sql" />
     <Build Include="dbo\Tables\Pedidos\Pedido.sql" />
     <Build Include="dbo\Tables\Entregas\Entrega.sql" />
     <Build Include="dbo\Tables\Entregas\CatalogoProvincia.sql" />
@@ -89,8 +88,27 @@
     <Build Include="dbo\StoreProcedures\Productos\CategoriaActualizar.sql" />
     <Build Include="dbo\StoreProcedures\Productos\CategoriaEliminar.sql" />
     <Build Include="dbo\StoreProcedures\Productos\CategoriaLista.sql" />
-    <Build Include="dbo\StoreProcedures\Pedidos\Conductor\ConductorObtener.sql" />
-    <Build Include="dbo\StoreProcedures\Pedidos\Conductor\ConductorInsertar.sql" />
-    <Build Include="dbo\StoreProcedures\Pedidos\Conductor\ConductorEliminar.sql" />
+    <Build Include="dbo\Tables\Entregas\Conductor.sql" />
+    <Build Include="dbo\Tables\Entregas\Camion.sql" />
+    <Build Include="dbo\StoreProcedures\Entregas\Conductor\ConductorEliminar.sql" />
+    <Build Include="dbo\StoreProcedures\Entregas\Conductor\ConductorInsertar.sql" />
+    <Build Include="dbo\StoreProcedures\Entregas\Conductor\ConductorLista.sql" />
+    <Build Include="dbo\StoreProcedures\Entregas\Conductor\ConductorObtener.sql" />
+    <Build Include="dbo\StoreProcedures\Entregas\Camion\CamionObtener.sql" />
+    <Build Include="dbo\StoreProcedures\Entregas\Camion\CamionInsertar.sql" />
+    <Build Include="dbo\StoreProcedures\Entregas\Camion\CamionEliminar.sql" />
+    <Build Include="dbo\StoreProcedures\Entregas\Camion\CamionActualizar.sql" />
+    <Build Include="dbo\StoreProcedures\Entregas\Camion\CamionLista.sql" />
+    <Build Include="dbo\StoreProcedures\Entregas\Conductor\ConductorActualizar.sql" />
+    <Build Include="dbo\StoreProcedures\Pedidos\PedidoInsertar.sql" />
+    <Build Include="dbo\StoreProcedures\Pedidos\PedidoObtener.sql" />
+    <Build Include="dbo\StoreProcedures\Pedidos\PedidoEliminar.sql" />
+    <Build Include="dbo\StoreProcedures\Pedidos\PedidoLista.sql" />
+    <Build Include="dbo\StoreProcedures\Pedidos\PedidoActualizar.sql" />
+    <Build Include="dbo\StoreProcedures\Entregas\EntregaInsertar.sql" />
+    <Build Include="dbo\StoreProcedures\Entregas\EntregaObtener.sql" />
+    <Build Include="dbo\StoreProcedures\Entregas\EntregaActualizar.sql" />
+    <Build Include="dbo\StoreProcedures\Entregas\EntregaEliminar.sql" />
+    <Build Include="dbo\StoreProcedures\Entregas\Camion\EntregaLista.sql" />
   </ItemGroup>
 </Project>
