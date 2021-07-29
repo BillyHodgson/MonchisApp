@@ -1,9 +1,9 @@
 ﻿CREATE TABLE [dbo].[Pedido]
 (  
     IdPedido INT NOT NULL IDENTITY(1,1) CONSTRAINT PK_Pedido PRIMARY KEY CLUSTERED(IdPedido)
-  , Cliente VARCHAR(250) NOT NULL /*Debe venir de Clientes*/
+  , IdCliente INT NOT NULL CONSTRAINT FK_Pedido_Cliente FOREIGN KEY(IdCliente) REFERENCES dbo.Cliente(IdCliente)
   , FechaPedido DATE NOT NULL
-  , Producto VARCHAR(250) NOT NULL /*Debe venir de Productos*/
+  , IdProducto INT NOT NULL CONSTRAINT FK_Pedido_Producto FOREIGN KEY(IdProducto) REFERENCES dbo.Productos(IdProducto)
   , Cantidad INT NOT NULL /*Debe validar si esta disponible la cantidad*/
   , SubTotal INT NOT NULL 
   , SubEnvio INT NOT NULL
