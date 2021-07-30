@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Entity.dbo.Pedidos
+namespace Entity
 {
-    public class Conductor : EN
+    public class ConductorEntity : EN
     {
         public int IdConductor { get; set; }
 

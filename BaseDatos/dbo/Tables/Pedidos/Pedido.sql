@@ -5,8 +5,8 @@
   , FechaPedido DATE NOT NULL
   , IdProducto INT NOT NULL CONSTRAINT FK_Pedido_Producto FOREIGN KEY(IdProducto) REFERENCES dbo.Productos(IdProducto)
   , Cantidad INT NOT NULL /*Debe validar si esta disponible la cantidad*/
-  , SubTotal INT NOT NULL 
-  , SubEnvio INT NOT NULL
+  , SubTotal INT NOT NULL
+  , Envio INT NOT NULL
   , IVA INT NOT NULL 
   , Total INT NOT NULL 
   
