@@ -3,15 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31515.178
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication", "WebApplication\WebApplication.csproj", "{BDDC0B0C-A652-443D-88BA-B75BDFCEFAAC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApplication", "WebApplication\WebApplication.csproj", "{BDDC0B0C-A652-443D-88BA-B75BDFCEFAAC}"
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "BaseDatos", "BaseDatos\BaseDatos.sqlproj", "{A37D253E-F7EA-4A62-A640-101E91AC5766}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BD", "BD\BD.csproj", "{4AA77011-BD51-44FE-8C35-80EDCBE8ECD3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BD", "BD\BD.csproj", "{4AA77011-BD51-44FE-8C35-80EDCBE8ECD3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entity", "Entity\Entity.csproj", "{8B162174-852F-4FB7-92E9-983EF4D135E2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Entity", "Entity\Entity.csproj", "{8B162174-852F-4FB7-92E9-983EF4D135E2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WBL", "WBL\WBL.csproj", "{4E20288C-F7E5-4540-B7B1-B1B10ECCE2D5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WBL", "WBL\WBL.csproj", "{4E20288C-F7E5-4540-B7B1-B1B10ECCE2D5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
