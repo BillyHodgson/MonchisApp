@@ -18,8 +18,21 @@ namespace WebApplication.Pages.Categoria
             this.categoriaService = categoriaService;
         }
 
-        public void OnGet()
+        public IEnumerable<CategoriaEntity> GridList { get; set; } = new List<CategoriaEntity>();
+
+        public async Task<IActionResult> OnGet()
         {
+            try
+            {
+                GridList = await categoriaService.Get();
+                return Page();
+
+            }
+            catch (Exception ex)
+            {
+
+                return Content(ex.Message);
+            }
         }
     }
 }
