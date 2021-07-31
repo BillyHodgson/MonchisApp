@@ -1,0 +1,6 @@
+﻿namespace CategoriaGrid {
+
+    $("#GridView").DataTable();
+
+
+}
