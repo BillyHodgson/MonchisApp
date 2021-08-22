@@ -1,5 +1,4 @@
 ﻿CREATE PROCEDURE [dbo].[CategoriaInsertar]
-	@IdCategoria INT,
 	@Descripcion VARCHAR(250)
 
 	AS
@@ -11,14 +10,11 @@
 
    INSERT INTO Categoria
    (
-	  IdCategoria
-      ,Descripcion
+      Descripcion
 	)
    VALUES
    (
-      @IdCategoria
-     ,@Descripcion
-	
+     @Descripcion
    )
 
    COMMIT TRANSACTION TRASA

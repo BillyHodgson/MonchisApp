@@ -15,7 +15,6 @@ namespace WebApplication
         {
 
             services.AddSingleton<IDataAccess, DataAccess>();
-            services.AddTransient<ICategoriaService, CategoriaService>();
             return services;
         }
     }

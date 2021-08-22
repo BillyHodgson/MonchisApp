@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -24,7 +25,6 @@ namespace WebApplication
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDIContainer();
-
             services.AddConfigHttpClient(Configuration);
 
             services.AddHttpContextAccessor();
@@ -42,7 +42,14 @@ namespace WebApplication
             {
                 option.JsonSerializerOptions.DictionaryKeyPolicy = null;
                 option.JsonSerializerOptions.PropertyNamingPolicy = null;
-            });
+            })
+             .AddRazorPagesOptions(
+                 options => 
+                 {
+                     options.Conventions
+                        .ConfigureFilter(new IgnoreAntiforgeryTokenAttribute());
+                 }              
+                );             
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -59,6 +66,7 @@ namespace WebApplication
                 app.UseHsts();
             }
 
+            app.UseSession();
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 

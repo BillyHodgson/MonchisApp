@@ -1,16 +1,22 @@
 "use strict";
 var CategoriaGrid;
 (function (CategoriaGrid) {
-    if (MensajeApp != "") {
-        Toast.fire({
-            icon: "success", title: MensajeApp
-        });
-    }
     function OnClickEliminar(id) {
-        ComfirmAlert("Desea elimiar este registro?", "Eliminar", "warning", "#3085d6", "d33")
+        ComfirmAlert("Desea eliminar el registro? ", "Eliminar", "warning", "#3085d6", "#d33")
             .then(function (result) {
             if (result.isConfirmed) {
-                window.location.href = "Categoria/Grid?handler=Eliminar&id" + id;
+                //animacion
+                Loading.fire("Borrando..");
+                App.AxiosProvider.CategoriaEliminar(id).then(function (data) {
+                    //cerrar animacion
+                    //////////////////////////Loading.close();
+                    if (data.CodeError == 0) {
+                        Toast.fire({ title: "Se elimino correctamente!", icon: "success" }).then(function () { return window.location.href = "Categoria/Grid"; });
+                    }
+                    else {
+                        Toast.fire({ title: data.MsgError, icon: "error" });
+                    }
+                });
             }
         });
     }

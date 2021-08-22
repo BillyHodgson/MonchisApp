@@ -4,8 +4,6 @@ AS
 	BEGIN
 		SET NOCOUNT ON
 
-
-
 		SELECT 
 		IdCategoria,
 		Descripcion
@@ -15,10 +13,5 @@ AS
 
 			WHERE
 					IdCategoria=1
-
-
-
-
-
 
 	END

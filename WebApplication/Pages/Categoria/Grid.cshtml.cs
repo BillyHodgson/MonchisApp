@@ -11,57 +11,24 @@ namespace WebApplication.Pages.Categoria
 {
     public class GridModel : PageModel
     {
-        private readonly ICategoriaService categoriaService;
+        private readonly ServiceApi service;
 
-        public GridModel(ICategoriaService categoriaService)
+        public GridModel(ServiceApi service)
         {
-            this.categoriaService = categoriaService;
+            this.service = service;
         }
 
         public IEnumerable<CategoriaEntity> GridList { get; set; } = new List<CategoriaEntity>();
-
-        public string Mensaje { get; set; } = "";
 
         public async Task<IActionResult> OnGet()
         {
             try
             {
-                GridList = await categoriaService.Get();
-                if (TempData.ContainsKey("Msg"))
-                {
-                    Mensaje = TempData["Msg"] as string;
-                }
-                TempData.Clear();
+                GridList = await service.CategoriaGet();
                 return Page();
-
             }
             catch (Exception ex)
             {
-
-                return Content(ex.Message);
-            }
-        }
-
-        public async Task<IActionResult> OnGetEliminar(int id)
-        {
-            try
-            {
-                var result = await categoriaService.Delete(new()
-                {
-                    IdCategoria=id
-                });
-
-                if (result.CodeError!=0)
-                {
-                    throw new Exception(result.MsgError);
-                }
-                TempData["Msg"] = "Se elimino correctamente";
-                return Redirect("Grid");
-
-            }
-            catch (Exception ex)
-            {
-
                 return Content(ex.Message);
             }
         }

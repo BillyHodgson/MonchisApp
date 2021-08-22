@@ -37,7 +37,19 @@ namespace WBL
             }
             catch (Exception)
             {
+                throw;
+            }
+        }
 
+        public async Task<IEnumerable<CategoriaEntity>> GetLista()
+        {
+            try
+            {
+                var result = sql.QueryAsync<CategoriaEntity>("CategoriaLista");
+                return await result;
+            }
+            catch (Exception EX)
+            {
                 throw;
             }
         }
@@ -49,16 +61,11 @@ namespace WBL
                 var result = sql.QueryFirstAsync<CategoriaEntity>("CategoriaObtener", new
                 {
                     entity.IdCategoria
-                }
-
-
-                );
-
+                });
                 return await result;
             }
             catch (Exception)
             {
-
                 throw;
             }
         }
@@ -69,18 +76,12 @@ namespace WBL
             {
                 var result = sql.ExecuteAsync("CategoriaInsertar", new
                 {
-                    entity.IdCategoria,
-                    entity.Descripcion
-                }
-
-
-                );
-
+                    entity.Descripcion,
+                });
                 return await result;
             }
             catch (Exception)
             {
-
                 throw;
             }
         }
@@ -94,16 +95,11 @@ namespace WBL
                 {
                     entity.IdCategoria,
                     entity.Descripcion
-                }
-
-
-                );
-
+                });
                 return await result;
             }
             catch (Exception)
             {
-
                 throw;
             }
         }
@@ -116,17 +112,11 @@ namespace WBL
                 var result = sql.ExecuteAsync("CategoriaEliminar", new
                 {
                     entity.IdCategoria
-
-                }
-
-
-                );
-
+                });
                 return await result;
             }
             catch (Exception)
             {
-
                 throw;
             }
         }
