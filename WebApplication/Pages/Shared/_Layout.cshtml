@@ -10,7 +10,7 @@
 <body>
     <nav class="navbar fixed-top navbar-expand-lg navbar-dark py-0" style="background-color: #4B505E">
         <div class="container-fluid">
-            <img src="~/Assets/Images/logo_banner.svg" height="30px" style="padding-right:5em"/>
+            <img src="~/Assets/Images/logo_banner.svg" height="30px" style="padding-right:5em" />
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -45,9 +45,15 @@
             </div>
         </div>
     </nav>
-
-    <br />
-    @RenderBody()
+    <div class="back min-vh-100">
+        <div class="container">
+            <div class="row pt-5"
+                <div class=" col">
+                @RenderBody()
+                </div>
+            </div>
+        </div>
+    </div>
 
     @await Html.PartialAsync("_ScriptsPartial")
     @await RenderSectionAsync("Scripts", required: false)
