@@ -2,20 +2,22 @@
 @model WebApplication.Pages.Categoria.EditModel
 @{
 }
-<div id="AppEdit" class="container">
+
+
+<div id="AppEdit" class="container" data-entity="@JsonSerializer.Serialize(Model.Entity)" v-cloak>
     <div class="card">
         <div class="card-header">
-            @(Model.id.HasValue ? "Actualizar" : "Nuevo")
+            @(Model.id.HasValue ? "Actualizar":"Nuevo")
         </div>
         <div class="card-body">
-            <form id="FormEdit" method="post">
-                <input type="hidden" asp-for="Entity.IdCategoria" />
+            <form id="FormEdit">
+
+                <input type="hidden" asp-for="Entity.IdCategoria" v-model="Entity.IdCategoria" />
 
                 <div class="form-group mb-3">
-                    <label for="Entity.Descripcion" class="form-label">Descripcion</label>
-                    <input type="text" class="form-control" asp-for="Entity.Descripcion" maxlength="250" required>
+                    <label for="Entity.Descripcion" class="form-label">Descripción</label>
+                    <input type="text" class="form-control" asp-for="Entity.Descripcion" v-model="Entity.Descripcion" maxlength="250" required>
                 </div>
-
 
                 <div class="row">
                     <div class="col-4">
@@ -24,17 +26,14 @@
                         </button>
                     </div>
                 </div>
-
             </form>
-
-
         </div>
     </div>
-
 </div>
+
 
 @section Scripts{
 
-    <script defer src="~/App/Categoria/Grid.js"></script>
+    <script defer src="~/App/Categoria/Edit.js"></script>
 
 }

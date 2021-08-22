@@ -9,6 +9,7 @@ var CategoriaEdit;
         },
         methods: {
             CategoriaServicio: function (entity) {
+                console.log(entity);
                 if (entity.IdCategoria == null) {
                     return App.AxiosProvider.CategoriaGuardar(entity);
                 }
@@ -20,10 +21,10 @@ var CategoriaEdit;
                 if (BValidateData(this.Formulario)) {
                     Loading.fire("Guardando");
                     this.CategoriaServicio(this.Entity).then(function (data) {
-                        //////////////////////////Loading.close();
+                        Loading.close();
                         if (data.CodeError == 0) {
                             Toast.fire({ title: "Se guardo sastifactoriamente!", icon: "success" })
-                                .then(function () { return window.location.href = "Cliente/Grid"; });
+                                .then(function () { return window.location.href = "Categoria/Grid"; });
                         }
                         else {
                             Toast.fire({ title: data.MsgError, icon: "error" });

@@ -7,6 +7,7 @@
         },
         methods: {
             CategoriaServicio(entity) {
+                console.log(entity)
                 if (entity.IdCategoria == null) {
                     return App.AxiosProvider.CategoriaGuardar(entity);
                 } else {
@@ -17,10 +18,10 @@
                 if (BValidateData(this.Formulario)) {
                     Loading.fire("Guardando");
                     this.CategoriaServicio(this.Entity).then(data => {
-                         //////////////////////////Loading.close();
+                        Loading.close();
                         if (data.CodeError == 0) {
                             Toast.fire({ title: "Se guardo sastifactoriamente!", icon: "success" })
-                                .then(() => window.location.href = "Cliente/Grid")
+                                .then(() => window.location.href = "Categoria/Grid")
                         } else {
                             Toast.fire({ title: data.MsgError, icon: "error" });
                         }
