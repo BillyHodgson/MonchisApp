@@ -9,10 +9,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="App_Start\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\Entity\Entity.csproj" />
     <ProjectReference Include="..\WBL\WBL.csproj" />
   </ItemGroup>

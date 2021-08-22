@@ -1,17 +1,17 @@
 "use strict";
-var CategoriaGrid;
-(function (CategoriaGrid) {
+var ProductosGrid;
+(function (ProductosGrid) {
     function OnClickEliminar(id) {
         ComfirmAlert("Desea eliminar el registro? ", "Eliminar", "warning", "#3085d6", "#d33")
             .then(function (result) {
             if (result.isConfirmed) {
                 //animacion
                 Loading.fire("Borrando..");
-                App.AxiosProvider.CategoriaEliminar(id).then(function (data) {
+                App.AxiosProvider.ProductosEliminar(id).then(function (data) {
                     //cerrar animacion
                     Loading.close();
                     if (data.CodeError == 0) {
-                        Toast.fire({ title: "Se elimino correctamente!", icon: "success" }).then(function () { return window.location.href = "Categoria/Grid"; });
+                        Toast.fire({ title: "Se elimino correctamente!", icon: "success" }).then(function () { return window.location.href = "Productos/Grid"; });
                     }
                     else {
                         Toast.fire({ title: data.MsgError, icon: "error" });
@@ -20,7 +20,7 @@ var CategoriaGrid;
             }
         });
     }
-    CategoriaGrid.OnClickEliminar = OnClickEliminar;
+    ProductosGrid.OnClickEliminar = OnClickEliminar;
     $("#GridView").DataTable();
-})(CategoriaGrid || (CategoriaGrid = {}));
+})(ProductosGrid || (ProductosGrid = {}));
 //# sourceMappingURL=Grid.js.map

@@ -30,13 +30,11 @@ namespace WBL
         {
             try
             {
-                var result = sql.QueryAsync<ProductosEntity>("ProductosObtener");
-
+                var result = sql.QueryAsync<ProductosEntity, CategoriaEntity>("ProductosObtener", "IdCategoria");
                 return await result;
             }
             catch (Exception)
             {
-
                 throw;
             }
         }
@@ -48,16 +46,11 @@ namespace WBL
                 var result = sql.QueryFirstAsync<ProductosEntity>("ProductosObtener", new
                 {
                     entity.IdProducto
-                }
-
-
-                );
-
+                });
                 return await result;
             }
             catch (Exception)
             {
-
                 throw;
             }
         }
@@ -68,24 +61,16 @@ namespace WBL
             {
                 var result = sql.ExecuteAsync("ProductosInsertar", new
                 {
-                    entity.IdProducto,
                     entity.IdCategoria,
                     entity.Nombre,
                     entity.Cantidad,
-                    entity.Caracteristicas
-
-
-
-                }
-
-
-                );
-
+                    entity.Caracteristicas,
+                    entity.Estado
+                });
                 return await result;
             }
             catch (Exception)
             {
-
                 throw;
             }
         }
@@ -101,17 +86,13 @@ namespace WBL
                     entity.IdCategoria,
                     entity.Nombre,
                     entity.Cantidad,
-                    entity.Caracteristicas
-                }
-
-
-                );
-
+                    entity.Caracteristicas,
+                    entity.Estado
+                });
                 return await result;
             }
             catch (Exception)
             {
-
                 throw;
             }
         }
@@ -124,17 +105,11 @@ namespace WBL
                 var result = sql.ExecuteAsync("ProductosEliminar", new
                 {
                     entity.IdProducto
-
-                }
-
-
-                );
-
+                });
                 return await result;
             }
             catch (Exception)
             {
-
                 throw;
             }
         }

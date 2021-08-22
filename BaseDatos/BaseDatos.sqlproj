@@ -110,5 +110,6 @@
     <Build Include="dbo\StoreProcedures\Entregas\EntregaActualizar.sql" />
     <Build Include="dbo\StoreProcedures\Entregas\EntregaEliminar.sql" />
     <Build Include="dbo\StoreProcedures\Entregas\Camion\EntregaLista.sql" />
+    <Build Include="dbo\StoreProcedures\Productos\ProductosLista.sql" />
   </ItemGroup>
 </Project>

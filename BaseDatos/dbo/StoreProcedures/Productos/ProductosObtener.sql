@@ -7,14 +7,17 @@ AS
 	
 	SELECT
 	
-	 IdProducto
-	,IdCategoria
-	,Nombre
-	,Cantidad
-	,Caracteristicas
-	,Estado
+	P.IdProducto
+	,P.Nombre
+	,P.Cantidad
+	,P.Caracteristicas
+	,P.Estado
+	,C.IdCategoria
+	,C.Descripcion
 
-	FROM Productos
+	FROM dbo.Productos P
+	 INNER JOIN dbo.Categoria C
+			ON (C.IdCategoria=P.IdCategoria)
 	WHERE
 	     (@IdProducto IS NULL OR IdProducto=@IdProducto)
 

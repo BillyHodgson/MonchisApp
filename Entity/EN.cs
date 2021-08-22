@@ -8,6 +8,6 @@ namespace Entity
 {
     public class EN : DBEntity
     {
-        public bool Estado { get; set; }
+        public bool Estado { get; set; } = true;
     }
 }

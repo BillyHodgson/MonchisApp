@@ -9,9 +9,7 @@ AS
 	BEGIN TRY
 	--METODO
 
-	DELETE FROM Productos
-	WHERE IdProducto=@IdProducto
-	
+	DELETE FROM dbo.Productos WHERE IdProducto=@IdProducto
 
 	COMMIT TRANSACTION TRASA
 

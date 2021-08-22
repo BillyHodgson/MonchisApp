@@ -10,6 +10,26 @@ namespace WebApplication.Pages.Productos
 {
     public class GridModel : PageModel
     {
-        
+        private readonly ServiceApi service;
+
+        public GridModel(ServiceApi service)
+        {
+            this.service = service;
+        }
+
+        public IEnumerable<ProductosEntity> GridList { get; set; } = new List<ProductosEntity>();
+
+        public async Task<IActionResult> OnGet()
+        {
+            try
+            {
+                GridList = await service.ProductosGet();
+                return Page();
+            }
+            catch (Exception ex)
+            {
+                return Content(ex.Message);
+            }
+        }
     }
 }

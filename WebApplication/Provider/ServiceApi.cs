@@ -37,5 +37,26 @@ namespace WebApplication
         }
         #endregion
 
+        #region Productos
+        public async Task<IEnumerable<ProductosEntity>> ProductosGet()
+        {
+            var result = await client.ServicioGetAsync<IEnumerable<ProductosEntity>>("api/Productos");
+            return result;
+        }
+
+        public async Task<IEnumerable<ProductosEntity>> ProductosGetLista()
+        {
+            var result = await client.ServicioGetAsync<IEnumerable<ProductosEntity>>("api/Productos/Lista");
+            return result;
+        }
+
+        public async Task<ProductosEntity> ProductosGetById(int id)
+        {
+            var result = await client.ServicioGetAsync<ProductosEntity>("api/Productos/" + id);
+            if (result.CodeError is not 0) throw new Exception(result.MsgError);
+            return result;
+        }
+        #endregion
+
     }
 }

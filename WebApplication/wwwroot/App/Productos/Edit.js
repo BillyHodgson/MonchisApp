@@ -1,6 +1,6 @@
 "use strict";
-var CategoriaEdit;
-(function (CategoriaEdit) {
+var ProductosEdit;
+(function (ProductosEdit) {
     var Entity = $("#AppEdit").data("entity");
     var Formulario = new Vue({
         data: {
@@ -10,11 +10,11 @@ var CategoriaEdit;
         methods: {
             Servicio: function (entity) {
                 console.log(entity);
-                if (entity.IdCategoria == null) {
-                    return App.AxiosProvider.CategoriaGuardar(entity);
+                if (entity.IdProducto == null) {
+                    return App.AxiosProvider.ProductosGuardar(entity);
                 }
                 else {
-                    return App.AxiosProvider.CategoriaActualizar(entity);
+                    return App.AxiosProvider.ProductosActualizar(entity);
                 }
             },
             Save: function () {
@@ -24,7 +24,7 @@ var CategoriaEdit;
                         Loading.close();
                         if (data.CodeError == 0) {
                             Toast.fire({ title: "Se guardo sastifactoriamente!", icon: "success" })
-                                .then(function () { return window.location.href = "Categoria/Grid"; });
+                                .then(function () { return window.location.href = "Productos/Grid"; });
                         }
                         else {
                             Toast.fire({ title: data.MsgError, icon: "error" });
@@ -41,5 +41,5 @@ var CategoriaEdit;
         }
     });
     Formulario.$mount("#AppEdit");
-})(CategoriaEdit || (CategoriaEdit = {}));
+})(ProductosEdit || (ProductosEdit = {}));
 //# sourceMappingURL=Edit.js.map
