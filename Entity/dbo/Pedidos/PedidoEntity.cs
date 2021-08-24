@@ -17,13 +17,7 @@ namespace Entity
 
         public int? IdPedido { get; set; }
 
-        public int? IdCliente { get; set; }
-        public ClienteEntity Cliente { get; set; }
-
         public DateTime FechaPedido { get; set; } = DateTime.Today;
-
-        public string IdProducto { get; set; }
-        public ProductosEntity Producto { get; set; }
 
         public int Cantidad { get; set; }
         public decimal PrecioUnitario { get; set; }
@@ -35,6 +29,12 @@ namespace Entity
         public decimal Impuesto { get; set; }
 
         public decimal Total { get; set; }
+
+        public int? IdCliente { get; set; }
+        public ClienteEntity Cliente { get; set; }
+
+        public int? IdProducto { get; set; }
+        public ProductosEntity Producto { get; set; }
 
     }
 }

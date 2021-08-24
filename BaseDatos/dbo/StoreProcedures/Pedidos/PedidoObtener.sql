@@ -24,6 +24,6 @@ AS BEGIN
 	INNER JOIN dbo.Productos MA
          ON V.IdProducto = MA.IdProducto
 	WHERE
-	     (@IdPedido IS NULL OR IdPedido=@IdPedido)
+	     (@IdPedido IS NULL OR V.IdPedido=@IdPedido)
 
 END
