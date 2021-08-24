@@ -59,20 +59,22 @@
                 </div>
 
                 <div class="form-group mb-3">
+                    <label for="Entity.SubTotal" class="form-label">Sub Total :</label>
+                    <span class="text-info">{{Entity.Cantidad*Entity.PrecioUnitario+Entity.Envio}}</span>
+                </div>
+
+                <div class="form-group mb-3">
                     <label for="Entity.Impuesto" class="form-label">Impuesto</label>
                     <input type="number" class="form-control" asp-for="Entity.Impuesto" v-model.number="Entity.Impuesto" required>
                 </div>
 
                 <div class="form-group mb-3">
-                    <label for="Entity.SubTotal" class="form-label">Sub Total :</label>
-                    <span class="text-info">{{Entity.Cantidad*Entity.PrecioUnitario+Entity.Envio}}</span>
+                    <label for="Entity.Total" class="form-label">Total</label>
+                    @*<span>{{((Entity.Impuesto/100)*(Entity.PrecioUnitario*Entity.Cantidad)+(Entity.Cantidad*Entity.PrecioUnitario+Entity.Envio))}}</span>
+            <span>{{CalculoMontoTotalFn()}}</span>*@
+                    <span class="text-info">{{CalculoMontoTotalCP}}</span>
                 </div>
 
-
-                <div class="form-group mb-3">
-                    <label for="Entity.Total" class="form-label">Total :</label>
-                    <span class="text-info">{{((Entity.Impuesto/100)*(Entity.PrecioUnitario*Entity.Cantidad)+(Entity.Cantidad*Entity.PrecioUnitario+Entity.Envio))}}</span>
-                </div>
 
                 <div class="row">
                     <div class="col-4">

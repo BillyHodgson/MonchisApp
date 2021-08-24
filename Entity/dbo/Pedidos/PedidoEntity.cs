@@ -22,9 +22,9 @@ namespace Entity
         public int Cantidad { get; set; }
         public decimal PrecioUnitario { get; set; }
 
-        public decimal SubTotal { get; set; }
-
         public decimal Envio { get; set; }
+
+        public decimal SubTotal { get; set; }
 
         public decimal Impuesto { get; set; }
 

@@ -24,8 +24,8 @@ SET NOCOUNT ON
 	    , IdProducto
 		, Cantidad
 		, PrecioUnitario
-		, SubTotal
 		, Envio
+		, SubTotal
 		, Impuesto
 		, Total
 		)
@@ -36,8 +36,8 @@ SET NOCOUNT ON
 	    , @IdProducto
 		, @Cantidad
 		, @PrecioUnitario
-		, @SubTotal
 		, @Envio
+		, @SubTotal
 		, @Impuesto
 		, @Total
 		)

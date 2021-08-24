@@ -9,8 +9,8 @@ AS BEGIN
 		,   V.FechaPedido
 		,   V.Cantidad
 		,   V.PrecioUnitario
-		,   V.SubTotal
 		,   V.Envio
+		,   V.SubTotal
 		,   V.Impuesto
 		,   V.Total
 		,   MV.IdCliente

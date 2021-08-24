@@ -5,8 +5,8 @@
 	@IdProducto INT, 
 	@Cantidad INT,
 	@PrecioUnitario DECIMAL (18,2),
-	@SubTotal DECIMAL (18,2),
 	@Envio DECIMAL (18,2),
+	@SubTotal DECIMAL (18,2),
 	@Impuesto DECIMAL (18,2),
 	@Total DECIMAL (18,2)
 
@@ -24,8 +24,8 @@ SET NOCOUNT ON
 	IdProducto=@IdProducto, 
 	Cantidad=@Cantidad, 
 	PrecioUnitario=@PrecioUnitario,
+	Envio=@Envio,
 	Subtotal=@SubTotal,
-	Envio=@Envio, 
 	Impuesto=@Impuesto, 
 	Total=@Total
 

@@ -74,8 +74,8 @@ namespace WBL
                     entity.IdProducto,
                     entity.Cantidad,
                     entity.PrecioUnitario,
-                    entity.SubTotal,
                     entity.Envio,
+                    entity.SubTotal,  
                     entity.Impuesto,
                     entity.Total
                 });
@@ -103,8 +103,8 @@ namespace WBL
                     entity.IdProducto,
                     entity.Cantidad,
                     entity.PrecioUnitario,
-                    entity.SubTotal,
                     entity.Envio,
+                    entity.SubTotal,
                     entity.Impuesto,
                     entity.Total
                 });

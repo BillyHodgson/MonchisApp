@@ -30,8 +30,8 @@
                             <th>Producto</th>
                             <th>Precio Unitario</th>
                             <th>Cantidad</th>
-                            <th>Sub Total</th>
                             <th>Envio</th>
+                            <th>Sub Total</th>
                             <th>Impuesto</th>
                             <th>Total</th>
                             <th>Estado</th>
@@ -45,10 +45,10 @@
                             <td>@item.Cliente.NombreCompleto</td>
                             <td>@item.FechaPedido.ToString("dd/MM/yyyy")</td>
                             <td>@item.Producto.Nombre</td>
-                            <td>@item.Producto.Precio</td>
+                            <td>@item.PrecioUnitario</td>
                             <td>@item.Cantidad</td>
-                            <td>@item.SubTotal</td>
                             <td>@item.Envio</td>
+                            <td>@item.SubTotal</td>
                             <td>@item.Impuesto</td>
                             <td>@((item.Impuesto/100)* item.SubTotal)</td>
                             <td>@item.Total</td>

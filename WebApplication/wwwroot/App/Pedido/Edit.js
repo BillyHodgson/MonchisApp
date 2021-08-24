@@ -8,9 +8,12 @@ var PedidoEdit;
             Entity: Entity,
         },
         methods: {
-            Servicio: function (entity) {
-                console.log(entity);
-                if (entity.IdPedido == null) {
+            CalculoMontoTotalFn: function () {
+                var total = ((this.Entity.Impuesto / 100) * this.Entity.Monto) + this.Entity.Monto;
+                return total;
+            },
+            CompraServicio: function (entity) {
+                if (entity.IdCompra == null) {
                     return App.AxiosProvider.PedidoGuardar(entity);
                 }
                 else {
@@ -20,10 +23,10 @@ var PedidoEdit;
             Save: function () {
                 if (BValidateData(this.Formulario)) {
                     Loading.fire("Guardando");
-                    this.Servicio(this.Entity).then(function (data) {
+                    this.CompraServicio(this.Entity).then(function (data) {
                         Loading.close();
                         if (data.CodeError == 0) {
-                            Toast.fire({ title: "Se guardo sastifactoriamente!", icon: "success" })
+                            Toast.fire({ title: "Se ha realizado el pedido!", icon: "success" })
                                 .then(function () { return window.location.href = "Pedido/Grid"; });
                         }
                         else {
@@ -38,6 +41,12 @@ var PedidoEdit;
         },
         mounted: function () {
             CreateValidator(this.Formulario);
+        },
+        computed: {
+            CalculoMontoTotalCP: function () {
+                var total = ((this.Entity.Impuesto / 100) * this.Entity.SubTotal) + this.Entity.SubTotal;
+                return total;
+            }
         }
     });
     Formulario.$mount("#AppEdit");
