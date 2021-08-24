@@ -1,7 +1,7 @@
 ﻿CREATE PROCEDURE [dbo].[ClienteActualizar]
 	@IdCliente INT,
-	@Cedula VARCHAR(500),
-	@NombreCompleto VARCHAR(500),
+	@Cedula VARCHAR(250),
+	@NombreCompleto VARCHAR(250),
 	@FechaNacimiento DATE,
 	@Telefono varchar(250),
     @Estado BIT

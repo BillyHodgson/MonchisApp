@@ -8,7 +8,7 @@ var ClienteEdit;
             Entity: Entity,
         },
         methods: {
-            ClienteServicio: function (entity) {
+            Servicio: function (entity) {
                 console.log(entity);
                 if (entity.IdCliente == null) {
                     return App.AxiosProvider.ClienteGuardar(entity);
@@ -20,7 +20,7 @@ var ClienteEdit;
             Save: function () {
                 if (BValidateData(this.Formulario)) {
                     Loading.fire("Guardando");
-                    this.ClienteServicio(this.Entity).then(function (data) {
+                    this.Servicio(this.Entity).then(function (data) {
                         Loading.close();
                         if (data.CodeError == 0) {
                             Toast.fire({ title: "Se guardo sastifactoriamente!", icon: "success" })

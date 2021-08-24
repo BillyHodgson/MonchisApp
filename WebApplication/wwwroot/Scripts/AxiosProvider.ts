@@ -9,13 +9,13 @@ namespace App.AxiosProvider   {
     export const ProductosGuardar = (entity) => ServiceApi.post<DBEntity>("api/Productos", entity).then(({ data }) => data);
     export const ProductosActualizar = (entity) => ServiceApi.put<DBEntity>("api/Productos", entity).then(({ data }) => data);
 
-    export const PedidoEliminar = (id) => ServiceApi.delete<DBEntity>("api/Pedido/" + id).then(({ data }) => data);
-    export const PedidoGuardar = (entity) => ServiceApi.post<DBEntity>("api/Pedido", entity).then(({ data }) => data);
-    export const PedidoActualizar = (entity) => ServiceApi.put<DBEntity>("api/Pedido", entity).then(({ data }) => data);
-
     export const ClienteEliminar = (id) => ServiceApi.delete<DBEntity>("api/Cliente/" + id).then(({ data }) => data);
     export const ClienteGuardar = (entity) => ServiceApi.post<DBEntity>("api/Cliente", entity).then(({ data }) => data);
     export const ClienteActualizar = (entity) => ServiceApi.put<DBEntity>("api/Cliente", entity).then(({ data }) => data);
+
+    export const PedidoEliminar = (id) => ServiceApi.delete<DBEntity>("api/Pedido/" + id).then(({ data }) => data);
+    export const PedidoGuardar = (entity) => ServiceApi.post<DBEntity>("api/Pedido", entity).then(({ data }) => data);
+    export const PedidoActualizar = (entity) => ServiceApi.put<DBEntity>("api/Pedido", entity).then(({ data }) => data);
 }
 
 

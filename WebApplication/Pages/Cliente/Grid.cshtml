@@ -3,71 +3,63 @@
 @{
 }
 
-<br />
-<div class="container-fluid">
+
+
+<div class="container">
     <div class="card">
         <div class="card-header">
-
-            Clientes
-
-
+            Cliente
         </div>
         <div class="card-body">
-
             <a class="btn btn-outline-primary" asp-page="Edit">
-                <i class='bx bxs-comment-add'></i>
+                <i class='bx bx-add-to-queue'></i>
             </a>
-
             <div class="row">
+                <div class="col-12">
+                    <table id="GridView" class="table table-bordered table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th>IdCliente</th>
+                                <th>Cedula</th>
+                                <th>Nombre</th>
+                                <th>Fecha Nacimiento</th>
+                                <th>Telefono</th>
+                                <th>Acción</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.GridList)
+                            {
+                            <tr>
+                                <td>@item.IdCliente</td>
+                                <td>@item.Cedula</td>
+                                <td>@item.NombreCompleto</td>
+                                <td>@item.FechaNacimiento.ToString("dd/MM/yyyy")</td>
+                                <td>@item.Telefono</td>
+                                <td>@item.Estado</td>
+                                <td>
+                                    <a class="btn btn-outline-primary" asp-page="Edit" asp-route-id="@item.IdCliente">
+                                        <i class='bx bxs-edit'></i>
+                                    </a>
 
-                <div class="col-12"></div>
-                <table id="GridView" class="table table-bordered table-striped table-over">
-                    <thead>
-                        <tr>
-                            <th>ClienteId</th>
-                            <th>Cedula</th>
-                            <th>Nombre</th>
-                            <th>Fecha Nacimiento</th>
-                            <th>Telefono</th>
-                            <th>Estado</th>
-                            <th>Accion</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach (var item in Model.GridList)
-                        {
-                        <tr>
-                            <td>@item.IdCliente</td>
-                            <td>@item.Cedula</td>
-                            <td>@item.NombreCompleto</td>
-                            <td>@item.FechaNacimiento.ToString("dd/MM/yyyy")</td>
-                            <td>@item.Telefono</td>
-                            <td>@(item.Estado ?"Activo" :"Inactivo")</td>
-                            <td>
-                                <a class="btn btn-outline-primary" asp-page="Edit" asp-route-id="@item.IdCliente">
-                                    <i class='bx bx-edit-alt'></i>
-                                </a>
-                                <button type="button" class="btn btn-outline-danger"
-                                        onclick="ClienteGrid.OnClickEliminar(@item.IdCliente)">
-                                    <i class='bx bx-trash'></i>
-                                </button>
-                            </td>
-                        </tr>
-                        }
-                    </tbody>
-
-                </table>
-
+                                    <button type="button" class="btn btn-outline-primary"
+                                            onclick="ClienteGrid.OnClickEliminar(@item.IdCliente)">
+                                        <i class='bx bx-trash'></i>
+                                    </button>
+                                </td>
+                            </tr>
+}
+                        </tbody>
+                    </table>
+                </div>
             </div>
-
-
         </div>
     </div>
+
+
 </div>
 
-
-@section Scripts{
+@section Scripts {
 
     <script defer src="~/App/Cliente/Grid.js"></script>
-
 }

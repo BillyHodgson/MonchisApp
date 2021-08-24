@@ -9,7 +9,7 @@ namespace Entity
     public class ClienteEntity : EN
     {
 
-        public int IdCliente { get; set; }
+        public int? IdCliente { get; set; }
         public string Cedula { get; set; }
 
         public string NombreCompleto { get; set; }

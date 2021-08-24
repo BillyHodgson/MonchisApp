@@ -59,7 +59,7 @@
     <Folder Include="dbo" />
     <Folder Include="dbo\StoreProcedures" />
     <Folder Include="dbo\Tables" />
-    <Folder Include="dbo\Tables\Clientes" />
+    <Folder Include="dbo\Tables\Cliente" />
     <Folder Include="dbo\Tables\Productos" />
     <Folder Include="dbo\Tables\Pedidos" />
     <Folder Include="dbo\Tables\Entregas" />
@@ -78,7 +78,7 @@
     <Build Include="dbo\Tables\Entregas\CatalogoCanton.sql" />
     <Build Include="dbo\Tables\Productos\Productos.sql" />
     <Build Include="dbo\Tables\Productos\Categoria.sql" />
-    <Build Include="dbo\Tables\Clientes\Cliente.sql" />
+    <Build Include="dbo\Tables\Cliente\Cliente.sql" />
     <Build Include="dbo\StoreProcedures\Productos\ProductosInsertar.sql" />
     <Build Include="dbo\StoreProcedures\Productos\ProductosObtener.sql" />
     <Build Include="dbo\StoreProcedures\Productos\ProductosActualizar.sql" />

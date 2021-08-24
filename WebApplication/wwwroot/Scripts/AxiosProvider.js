@@ -27,18 +27,6 @@ var App;
             var data = _a.data;
             return data;
         }); };
-        AxiosProvider.PedidoEliminar = function (id) { return ServiceApi.delete("api/Pedido/" + id).then(function (_a) {
-            var data = _a.data;
-            return data;
-        }); };
-        AxiosProvider.PedidoGuardar = function (entity) { return ServiceApi.post("api/Pedido", entity).then(function (_a) {
-            var data = _a.data;
-            return data;
-        }); };
-        AxiosProvider.PedidoActualizar = function (entity) { return ServiceApi.put("api/Pedido", entity).then(function (_a) {
-            var data = _a.data;
-            return data;
-        }); };
         AxiosProvider.ClienteEliminar = function (id) { return ServiceApi.delete("api/Cliente/" + id).then(function (_a) {
             var data = _a.data;
             return data;
@@ -48,6 +36,18 @@ var App;
             return data;
         }); };
         AxiosProvider.ClienteActualizar = function (entity) { return ServiceApi.put("api/Cliente", entity).then(function (_a) {
+            var data = _a.data;
+            return data;
+        }); };
+        AxiosProvider.PedidoEliminar = function (id) { return ServiceApi.delete("api/Pedido/" + id).then(function (_a) {
+            var data = _a.data;
+            return data;
+        }); };
+        AxiosProvider.PedidoGuardar = function (entity) { return ServiceApi.post("api/Pedido", entity).then(function (_a) {
+            var data = _a.data;
+            return data;
+        }); };
+        AxiosProvider.PedidoActualizar = function (entity) { return ServiceApi.put("api/Pedido", entity).then(function (_a) {
             var data = _a.data;
             return data;
         }); };

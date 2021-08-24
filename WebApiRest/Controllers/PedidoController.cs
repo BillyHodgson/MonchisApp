@@ -10,7 +10,7 @@ namespace WebApiRest.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class PedidoController
+    public class PedidoController : ControllerBase
     {
         private readonly IPedidoService pedidoService;
 

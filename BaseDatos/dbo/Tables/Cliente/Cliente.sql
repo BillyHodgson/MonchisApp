@@ -1,6 +1,6 @@
 ﻿CREATE TABLE [dbo].[Cliente]
 (  
-    IdCliente INT NOT NULL IDENTITY(1,1) CONSTRAINT PK_Persona PRIMARY KEY CLUSTERED(IdCliente)
+    IdCliente INT NOT NULL IDENTITY(1,1) CONSTRAINT PK_Cliente PRIMARY KEY CLUSTERED(IdCliente)
   , Cedula VARCHAR(250) NOT NULL
   , NombreCompleto VARCHAR(250) NOT NULL
   , FechaNacimiento DATE NOT NULL 
