@@ -10,12 +10,9 @@ namespace Entity
     {
 
         public int IdCliente { get; set; }
+        public string Cedula { get; set; }
 
-        public string Nombre { get; set; }
-
-        public string Primer_Apellido { get; set; }
-
-        public string Segundo_Apellido { get; set; }
+        public string NombreCompleto { get; set; }
         public string FechaNacimiento { get; set; }
         public int Telefono { get; set; }
 

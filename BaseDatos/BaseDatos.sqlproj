@@ -103,7 +103,6 @@
     <Build Include="dbo\StoreProcedures\Pedidos\PedidoInsertar.sql" />
     <Build Include="dbo\StoreProcedures\Pedidos\PedidoObtener.sql" />
     <Build Include="dbo\StoreProcedures\Pedidos\PedidoEliminar.sql" />
-    <Build Include="dbo\StoreProcedures\Pedidos\PedidoLista.sql" />
     <Build Include="dbo\StoreProcedures\Pedidos\PedidoActualizar.sql" />
     <Build Include="dbo\StoreProcedures\Entregas\EntregaInsertar.sql" />
     <Build Include="dbo\StoreProcedures\Entregas\EntregaObtener.sql" />

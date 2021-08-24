@@ -5,10 +5,11 @@
   , FechaPedido DATE NOT NULL
   , IdProducto INT NOT NULL CONSTRAINT FK_Pedido_Producto FOREIGN KEY(IdProducto) REFERENCES dbo.Productos(IdProducto)
   , Cantidad INT NOT NULL /*Debe validar si esta disponible la cantidad*/
-  , SubTotal INT NOT NULL
-  , Envio INT NOT NULL
-  , IVA INT NOT NULL 
-  , Total INT NOT NULL 
+  , PrecioUnitario DECIMAL(18,2) NOT NULL
+  , SubTotal DECIMAL(18,2) NOT NULL
+  , Envio DECIMAL(18,2) NOT NULL
+  , Impuesto DECIMAL(18,2) NOT NULL 
+  , Total DECIMAL(18,2) NOT NULL 
   
 )
 WITH (DATA_COMPRESSION=PAGE)

@@ -63,6 +63,7 @@ namespace WBL
                 {
                     entity.IdCategoria,
                     entity.Nombre,
+                    entity.Precio,
                     entity.Cantidad,
                     entity.Caracteristicas,
                     entity.Estado
@@ -85,6 +86,7 @@ namespace WBL
                     entity.IdProducto,
                     entity.IdCategoria,
                     entity.Nombre,
+                    entity.Precio,
                     entity.Cantidad,
                     entity.Caracteristicas,
                     entity.Estado

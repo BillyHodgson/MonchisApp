@@ -3,10 +3,11 @@
 	@FechaPedido Date,
 	@IdProducto INT,
 	@Cantidad INT,
-	@SubTotal INT,
-	@Envio INT,
-	@IVA INT,
-	@Total INT
+	@PrecioUnitario DECIMAL (18,2),
+	@SubTotal DECIMAL (18,2),
+	@Envio DECIMAL (18,2),
+	@Impuesto DECIMAL (18,2),
+	@Total DECIMAL (18,2)
 	
 AS BEGIN
 SET NOCOUNT ON
@@ -22,9 +23,10 @@ SET NOCOUNT ON
 	    , FechaPedido 
 	    , IdProducto
 		, Cantidad
+		, PrecioUnitario
 		, SubTotal
 		, Envio
-		, IVA
+		, Impuesto
 		, Total
 		)
 		VALUES
@@ -33,9 +35,10 @@ SET NOCOUNT ON
 	    , @FechaPedido 
 	    , @IdProducto
 		, @Cantidad
+		, @PrecioUnitario
 		, @SubTotal
 		, @Envio
-		, @IVA
+		, @Impuesto
 		, @Total
 		)
 

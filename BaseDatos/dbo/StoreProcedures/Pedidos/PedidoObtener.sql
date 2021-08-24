@@ -8,17 +8,13 @@ AS BEGIN
 			V.IdPedido
 		,   V.FechaPedido
 		,   V.Cantidad
-		,   V.Cantidad
-		,   V.SubTotal
+		,   V.PrecioUnitario
 		,   V.SubTotal
 		,   V.Envio
-		,   V.IVA
+		,   V.Impuesto
 		,   V.Total
 		,   MV.IdCliente
-		,   MV.Nombre
-		,   MV.Primer_Apellido
-		,   MV.Segundo_Apellido
-		,   MV.Cedula
+		,   MV.NombreCompleto
 		,	MA.IdProducto
 		,   MA.Nombre
 	

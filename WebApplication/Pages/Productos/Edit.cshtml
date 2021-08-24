@@ -19,7 +19,12 @@
                 </div>
 
                 <div class="form-group mb-3">
-                    <label for="Entity.IdCategoria" class="form-label">Vehiculo</label>
+                    <label for="Entity.Precio" class="form-label">Precio</label>
+                    <input type="text" class="form-control" asp-for="Entity.Precio" v-model="Entity.Precio"  required>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label for="Entity.IdCategoria" class="form-label">Categoria</label>
                     <select asp-for="Entity.IdCategoria" class="form-select" v-model="Entity.IdCategoria"
                             asp-items="@(new SelectList(Model.CategoriaLista,"IdCategoria","Descripcion"))"
                             required>

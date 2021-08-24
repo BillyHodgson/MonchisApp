@@ -22,6 +22,7 @@
                             <tr>
                                 <th>IdProducto</th>
                                 <th>Nombre</th>
+                                <th>Precio</th>
                                 <th>Categoria</th>
                                 <th>Cantidad</th>
                                 <th>Características</th>
@@ -32,24 +33,25 @@
                         <tbody>
                             @foreach (var item in Model.GridList)
                             {
-                                <tr>
-                                    <td>@item.IdProducto</td>
-                                    <td>@item.Nombre</td>
-                                    <td>@item.Categoria.Descripcion</td>
-                                    <td>@item.Cantidad</td>
-                                    <td>@item.Caracteristicas</td>
-                                    <td>@(item.Estado ? "Activo" :"Inactivo")</td>
-                                    <td>
-                                        <a class="btn btn-outline-primary" asp-page="Edit" asp-route-id="@item.IdProducto">
-                                            <i class='bx bxs-edit'></i>
-                                        </a>
+                            <tr>
+                                <td>@item.IdProducto</td>
+                                <td>@item.Nombre</td>
+                                <td>@item.Precio</td>
+                                <td>@item.Categoria.Descripcion</td>
+                                <td>@item.Cantidad</td>
+                                <td>@item.Caracteristicas</td>
+                                <td>@(item.Estado ? "Activo" :"Inactivo")</td>
+                                <td>
+                                    <a class="btn btn-outline-primary" asp-page="Edit" asp-route-id="@item.IdProducto">
+                                        <i class='bx bxs-edit'></i>
+                                    </a>
 
-                                        <button type="button" class="btn btn-outline-primary"
-                                                onclick="ProductosGrid.OnClickEliminar(@item.IdProducto)">
-                                            <i class='bx bx-trash'></i>
-                                        </button>
-                                    </td>
-                                </tr>
+                                    <button type="button" class="btn btn-outline-primary"
+                                            onclick="ProductosGrid.OnClickEliminar(@item.IdProducto)">
+                                        <i class='bx bx-trash'></i>
+                                    </button>
+                                </td>
+                            </tr>
                             }
                         </tbody>
                     </table>

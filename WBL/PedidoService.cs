@@ -8,7 +8,16 @@ using System.Threading.Tasks;
 
 namespace WBL
 {
-    public class PedidoService
+    public interface IPedidoService
+    {
+        Task<DBEntity> Create(PedidoEntity entity);
+        Task<DBEntity> Delete(PedidoEntity entity);
+        Task<IEnumerable<PedidoEntity>> Get();
+        Task<PedidoEntity> GetById(PedidoEntity entity);
+        Task<DBEntity> Update(PedidoEntity entity);
+    }
+
+    public class PedidoService : IPedidoService
     {
         private readonly IDataAccess sql;
 
@@ -21,7 +30,7 @@ namespace WBL
         {
             try
             {
-                var result = sql.QueryAsync<PedidoEntity, ClienteEntity,ProductosEntity>("PedidoObtener", "IdPedidoId,IdCliente,IdProducto");
+                var result = sql.QueryAsync<PedidoEntity, ClienteEntity, ProductosEntity>("PedidoObtener", "IdPedido,IdCliente,IdProducto");
 
                 return await result;
 
@@ -64,9 +73,10 @@ namespace WBL
                     entity.FechaPedido,
                     entity.IdProducto,
                     entity.Cantidad,
+                    entity.PrecioUnitario,
                     entity.SubTotal,
                     entity.Envio,
-                    entity.IVA,
+                    entity.Impuesto,
                     entity.Total
                 });
 
@@ -92,9 +102,10 @@ namespace WBL
                     entity.FechaPedido,
                     entity.IdProducto,
                     entity.Cantidad,
+                    entity.PrecioUnitario,
                     entity.SubTotal,
                     entity.Envio,
-                    entity.IVA,
+                    entity.Impuesto,
                     entity.Total
                 });
 
@@ -109,23 +120,23 @@ namespace WBL
         }
 
         public async Task<DBEntity> Delete(PedidoEntity entity)
+        {
+            try
             {
-                try
+                var result = sql.ExecuteAsync("PedidoEliminar", new
                 {
-                    var result = sql.ExecuteAsync("PedidoEliminar", new
-                    {
-                        entity.IdPedido
-                    });
+                    entity.IdPedido
+                });
 
-                    return await result;
-                }
-                catch (Exception)
-                {
-
-                    throw;
-                }
-
-
+                return await result;
             }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+
         }
+    }
 }

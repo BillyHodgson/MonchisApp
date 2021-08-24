@@ -1,0 +1,83 @@
+﻿@page
+@model WebApplication.Pages.Pedido.GridModel
+@{
+}
+
+<br />
+<div class="container-fluid">
+    <div class="card">
+        <div class="card-header">
+
+            Pedido
+
+
+        </div>
+        <div class="card-body">
+
+            <a class="btn btn-outline-primary" asp-page="Edit">
+                <i class='bx bxs-comment-add'></i>
+            </a>
+
+            <div class="row">
+
+                <div class="col-12"></div>
+                <table id="GridView" class="table table-bordered table-striped table-over">
+                    <thead>
+                        <tr>
+                            <th>Codigo</th>
+                            <th>Cliente</th>
+                            <th>Fecha Pedido</th>
+                            <th>Producto</th>
+                            <th>Precio Unitario</th>
+                            <th>Cantidad</th>
+                            <th>Sub Total</th>
+                            <th>Envio</th>
+                            <th>Impuesto</th>
+                            <th>Total</th>
+                            <th>Estado</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.GridList)
+                        {
+                        <tr>
+                            <td>@item.IdPedido</td>
+                            <td>@item.Cliente.NombreCompleto</td>
+                            <td>@item.FechaPedido.ToString("dd/MM/yyyy")</td>
+                            <td>@item.Producto.Nombre</td>
+                            <td>@item.Producto.Precio</td>
+                            <td>@item.Cantidad</td>
+                            <td>@item.SubTotal</td>
+                            <td>@item.Envio</td>
+                            <td>@item.Impuesto</td>
+                            <td>@((item.Impuesto/100)* item.SubTotal)</td>
+                            <td>@item.Total</td>
+                            <td>@(item.Estado ?"Activo" :"Inactivo")</td>
+                            <td>
+                                <a class="btn btn-outline-primary" asp-page="Edit" asp-route-id="@item.IdPedido">
+                                    <i class='bx bx-edit-alt'></i>
+                                </a>
+                                <button type="button" class="btn btn-outline-danger"
+                                        onclick="PedidoGrid.OnClickEliminar(@item.IdPedido)">
+                                    <i class='bx bx-trash'></i>
+                                </button>
+                            </td>
+                        </tr>
+                        }
+                    </tbody>
+
+                </table>
+
+            </div>
+
+
+        </div>
+    </div>
+</div>
+
+
+@section Scripts{
+
+    <script defer src="~/App/Pedido/Grid.js"></script>
+
+}

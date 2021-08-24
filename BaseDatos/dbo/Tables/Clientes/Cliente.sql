@@ -2,9 +2,7 @@
 (  
     IdCliente INT NOT NULL IDENTITY(1,1) CONSTRAINT PK_Persona PRIMARY KEY CLUSTERED(IdCliente)
   , Cedula VARCHAR(250) NOT NULL
-  , Nombre VARCHAR(250) NOT NULL
-  , Primer_Apellido VARCHAR(250) NOT NULL
-  , Segundo_Apellido VARCHAR(250) NOT NULL
+  , NombreCompleto VARCHAR(250) NOT NULL
   , FechaNacimiento DATE NOT NULL 
   , Telefono INT NOT NULL
   , Estado BIT NOT NULL

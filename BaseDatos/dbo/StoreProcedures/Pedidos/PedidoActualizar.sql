@@ -3,13 +3,16 @@
 	@IdCliente INT,
 	@FechaPedido DATE,
 	@IdProducto INT, 
-	@Cantidad INT, 
-	@SubTotal INT,
-	@Envio INT, 
-	@IVA INT, 
-	@Total INT
+	@Cantidad INT,
+	@PrecioUnitario DECIMAL (18,2),
+	@SubTotal DECIMAL (18,2),
+	@Envio DECIMAL (18,2),
+	@Impuesto DECIMAL (18,2),
+	@Total DECIMAL (18,2)
 
-AS BEGIN
+AS 
+
+BEGIN
 SET NOCOUNT ON
 
 	BEGIN TRANSACTION TRASA
@@ -22,9 +25,10 @@ SET NOCOUNT ON
 	FechaPedido=@FechaPedido,
 	IdProducto=@IdProducto, 
 	Cantidad=@Cantidad, 
+	PrecioUnitario=@PrecioUnitario,
 	Subtotal=@SubTotal,
 	Envio=@Envio, 
-	IVA=@IVA, 
+	Impuesto=@Impuesto, 
 	Total=@Total
 
 	WHERE IdPedido=@IdPedido

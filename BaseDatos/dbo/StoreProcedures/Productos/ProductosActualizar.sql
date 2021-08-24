@@ -2,6 +2,7 @@
 	@IdProducto INT ,
 	@IdCategoria INT,
 	@Nombre VARCHAR(250),
+	@Precio DECIMAL(18,2),
 	@Cantidad INT,
 	@Caracteristicas VARCHAR(250),
 	@Estado BIT
@@ -18,6 +19,7 @@ AS
 	SET
 	IdCategoria=@IdCategoria,
 	Nombre=@Nombre,
+	Precio=@Precio,
 	Cantidad=@Cantidad,
 	Caracteristicas=@Caracteristicas,
 	Estado=@Estado

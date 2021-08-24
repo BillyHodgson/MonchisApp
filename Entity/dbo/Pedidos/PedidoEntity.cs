@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Entity
 {
-    public class PedidoEntity
+    public class PedidoEntity : EN
     {
         public PedidoEntity()
         {
@@ -26,14 +26,15 @@ namespace Entity
         public ProductosEntity Producto { get; set; }
 
         public int Cantidad { get; set; }
+        public decimal PrecioUnitario { get; set; }
 
-        public double SubTotal { get; set; }
+        public decimal SubTotal { get; set; }
 
-        public double Envio { get; set; }
+        public decimal Envio { get; set; }
 
-        public double IVA { get; set; } = 0.13;
+        public decimal Impuesto { get; set; }
 
-        public double Total { get; set; }
+        public decimal Total { get; set; }
 
     }
 }

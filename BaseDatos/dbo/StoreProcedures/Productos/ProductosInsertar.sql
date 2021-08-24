@@ -1,6 +1,7 @@
 ﻿CREATE PROCEDURE [dbo].[ProductosInsertar]
 	@IdCategoria INT,
 	@Nombre VARCHAR(250),
+	@Precio DECIMAL(18,2),
 	@Cantidad INT,
 	@Caracteristicas VARCHAR(250),
 	@Estado BIT
@@ -12,9 +13,9 @@ AS
 
 	BEGIN TRY
 
-	INSERT INTO Productos (IdCategoria,Nombre,Cantidad,Caracteristicas,Estado)
+	INSERT INTO Productos (IdCategoria,Nombre,Precio,Cantidad,Caracteristicas,Estado)
 
-	VALUES (@IdCategoria,@Nombre,@Cantidad,@Caracteristicas,@Estado)
+	VALUES (@IdCategoria,@Nombre,@Precio,@Cantidad,@Caracteristicas,@Estado)
 
 	COMMIT TRANSACTION TRASA
 

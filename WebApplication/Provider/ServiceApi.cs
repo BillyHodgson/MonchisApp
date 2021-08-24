@@ -58,5 +58,51 @@ namespace WebApplication
         }
         #endregion
 
+        #region Pedido
+        public async Task<IEnumerable<PedidoEntity>> PedidoGet()
+        {
+            var result = await client.ServicioGetAsync<IEnumerable<PedidoEntity>>("api/Pedido");
+
+            return result;
+
+        }
+
+        public async Task<PedidoEntity> PedidoGetById(int id)
+        {
+            var result = await client.ServicioGetAsync<PedidoEntity>("api/Pedido/" + id);
+
+            if (result.CodeError is not 0) throw new Exception(result.MsgError);
+
+            return result;
+
+        }
+
+        
+
+        #endregion
+
+        #region Cliente
+
+        public async Task<IEnumerable<ClienteEntity>> ClienteGet()
+        {
+            var result = await client.ServicioGetAsync<IEnumerable<ClienteEntity>>("api/Cliente");
+            return result;
+        }
+
+        public async Task<IEnumerable<ClienteEntity>> ClienteGetLista()
+        {
+            var result = await client.ServicioGetAsync<IEnumerable<ClienteEntity>>("api/Cliente/Lista");
+            return result;
+        }
+
+        public async Task<ClienteEntity> ClienteGetById(int id)
+        {
+            var result = await client.ServicioGetAsync<ClienteEntity>("api/Cliente/" + id);
+            if (result.CodeError is not 0) throw new Exception(result.MsgError);
+            return result;
+        }
+
+        #endregion
+
     }
 }

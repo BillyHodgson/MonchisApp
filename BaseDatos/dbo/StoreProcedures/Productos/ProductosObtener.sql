@@ -7,8 +7,9 @@ AS
 	
 	SELECT
 	
-	P.IdProducto
+	 P.IdProducto
 	,P.Nombre
+	,P.Precio
 	,P.Cantidad
 	,P.Caracteristicas
 	,P.Estado
