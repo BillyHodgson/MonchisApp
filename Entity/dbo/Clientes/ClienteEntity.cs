@@ -13,8 +13,8 @@ namespace Entity
         public string Cedula { get; set; }
 
         public string NombreCompleto { get; set; }
-        public string FechaNacimiento { get; set; }
-        public int Telefono { get; set; }
+        public DateTime FechaNacimiento { get; set; } = DateTime.Now;
+        public string Telefono { get; set; }
 
     }
 }

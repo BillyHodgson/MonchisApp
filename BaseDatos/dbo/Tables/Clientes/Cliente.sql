@@ -4,13 +4,8 @@
   , Cedula VARCHAR(250) NOT NULL
   , NombreCompleto VARCHAR(250) NOT NULL
   , FechaNacimiento DATE NOT NULL 
-  , Telefono INT NOT NULL
+  , Telefono VARCHAR(250) NOT NULL
   , Estado BIT NOT NULL
 )
-WITH (DATA_COMPRESSION=PAGE)
-GO
-
-CREATE UNIQUE NONCLUSTERED INDEX IDX_Cliente_Cedula
-ON dbo.Cliente(Cedula)
 WITH (DATA_COMPRESSION=PAGE)
 GO

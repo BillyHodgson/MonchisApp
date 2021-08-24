@@ -97,6 +97,7 @@ namespace WBL
             {
                 var result = sql.ExecuteAsync("ClienteActualizar", new
                 {
+                    entity.IdCliente,
                     entity.Cedula,
                     entity.NombreCompleto,
                     entity.FechaNacimiento,

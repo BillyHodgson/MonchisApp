@@ -110,5 +110,10 @@
     <Build Include="dbo\StoreProcedures\Entregas\EntregaEliminar.sql" />
     <Build Include="dbo\StoreProcedures\Entregas\Camion\EntregaLista.sql" />
     <Build Include="dbo\StoreProcedures\Productos\ProductosLista.sql" />
+    <Build Include="dbo\StoreProcedures\Clientes\ClienteActualizar.sql" />
+    <Build Include="dbo\StoreProcedures\Clientes\ClienteEliminar.sql" />
+    <Build Include="dbo\StoreProcedures\Clientes\ClienteInsertar.sql" />
+    <Build Include="dbo\StoreProcedures\Clientes\ClienteLista.sql" />
+    <Build Include="dbo\StoreProcedures\Clientes\ClienteObtener.sql" />
   </ItemGroup>
 </Project>
