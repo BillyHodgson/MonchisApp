@@ -63,6 +63,30 @@ var App;
             var data = _a.data;
             return data;
         }); };
+        AxiosProvider.CamionEliminar = function (id) { return ServiceApi.delete("api/Camion/" + id).then(function (_a) {
+            var data = _a.data;
+            return data;
+        }); };
+        AxiosProvider.CamionGuardar = function (entity) { return ServiceApi.post("api/Camion", entity).then(function (_a) {
+            var data = _a.data;
+            return data;
+        }); };
+        AxiosProvider.CamionActualizar = function (entity) { return ServiceApi.put("api/Camion", entity).then(function (_a) {
+            var data = _a.data;
+            return data;
+        }); };
+        AxiosProvider.ConductorEliminar = function (id) { return ServiceApi.delete("api/Conductor/" + id).then(function (_a) {
+            var data = _a.data;
+            return data;
+        }); };
+        AxiosProvider.ConductorGuardar = function (entity) { return ServiceApi.post("api/Conductor", entity).then(function (_a) {
+            var data = _a.data;
+            return data;
+        }); };
+        AxiosProvider.ConductorActualizar = function (entity) { return ServiceApi.put("api/Conductor", entity).then(function (_a) {
+            var data = _a.data;
+            return data;
+        }); };
     })(AxiosProvider = App.AxiosProvider || (App.AxiosProvider = {}));
 })(App || (App = {}));
 //# sourceMappingURL=AxiosProvider.js.map

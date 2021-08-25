@@ -13,7 +13,7 @@ SET NOCOUNT ON
 	-- AQUI VA EL CODIGO
 		
 	UPDATE dbo.Entrega SET
-	 FechaEntrega=@FechaEntrega,
+	FechaEntrega=@FechaEntrega,
     Destino=@Destino,
 	IdCamion=@IdCamion, 
 	Estado=@Estado

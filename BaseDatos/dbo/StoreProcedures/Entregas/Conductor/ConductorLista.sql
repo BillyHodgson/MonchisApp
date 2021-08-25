@@ -7,11 +7,7 @@ AS
 
 		SELECT 
 		IdConductor,
-		Nombre,
-		Apellido,
-		Cedula,
-		Telefono
-
+		NombreCompleto
 		FROM	
 			dbo.Conductor
 

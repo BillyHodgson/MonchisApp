@@ -148,5 +148,50 @@ namespace WebApplication
         }
         #endregion
 
+        #region Camion
+
+        public async Task<IEnumerable<CamionEntity>> CamionGet()
+        {
+            var result = await client.ServicioGetAsync<IEnumerable<CamionEntity>>("api/Camion");
+            return result;
+        }
+
+        public async Task<IEnumerable<CamionEntity>> CamionGetLista()
+        {
+            var result = await client.ServicioGetAsync<IEnumerable<CamionEntity>>("api/Camion/Lista");
+            return result;
+        }
+
+        public async Task<CamionEntity> CamionGetById(int id)
+        {
+            var result = await client.ServicioGetAsync<CamionEntity>("api/Camion/" + id);
+            if (result.CodeError is not 0) throw new Exception(result.MsgError);
+            return result;
+        }
+
+        #endregion
+
+        #region Conductor
+
+        public async Task<IEnumerable<ConductorEntity>> ConductorGet()
+        {
+            var result = await client.ServicioGetAsync<IEnumerable<ConductorEntity>>("api/Conductor");
+            return result;
+        }
+
+        public async Task<IEnumerable<ConductorEntity>> ConductorGetLista()
+        {
+            var result = await client.ServicioGetAsync<IEnumerable<ConductorEntity>>("api/Conductor/Lista");
+            return result;
+        }
+
+        public async Task<ConductorEntity> ConductorGetById(int id)
+        {
+            var result = await client.ServicioGetAsync<ConductorEntity>("api/Conductor/" + id);
+            if (result.CodeError is not 0) throw new Exception(result.MsgError);
+            return result;
+        }
+
+        #endregion
     }
 }

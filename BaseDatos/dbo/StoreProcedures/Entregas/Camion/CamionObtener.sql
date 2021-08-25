@@ -9,8 +9,8 @@ AS BEGIN
 		,   V.Caracteristicas
 		,   V.Estado
 		,   MV.IdConductor
-		,	MV.Nombre
-		,   MV.Apellido
+		,	MV.NombreCompleto
+
 	
 				
 

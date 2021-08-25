@@ -7,8 +7,7 @@ AS
 
 	SELECT 
 	    IdConductor
-	  , Nombre
-	  , Apellido
+	  , NombreCompleto
 	  , Cedula
 	  ,Telefono
 	  , Estado

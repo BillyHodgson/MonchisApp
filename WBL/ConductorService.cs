@@ -8,7 +8,17 @@ using System.Threading.Tasks;
 
 namespace WBL
 {
-    public class ConductorService
+    public interface IConductorService
+    {
+        Task<DBEntity> Create(ConductorEntity entity);
+        Task<DBEntity> Delete(ConductorEntity entity);
+        Task<IEnumerable<ConductorEntity>> Get();
+        Task<ConductorEntity> GetById(ConductorEntity entity);
+        Task<IEnumerable<ConductorEntity>> GetLista();
+        Task<DBEntity> Update(ConductorEntity entity);
+    }
+
+    public class ConductorService : IConductorService
     {
         private readonly IDataAccess sql;
 
@@ -82,8 +92,7 @@ namespace WBL
             {
                 var result = sql.ExecuteAsync("ConductorInsertar", new
                 {
-                    entity.Nombre,
-                    entity.Apellido,
+                    entity.NombreCompleto,
                     entity.Cedula,
                     entity.Telefono,
                     entity.Estado
@@ -107,8 +116,7 @@ namespace WBL
                 var result = sql.ExecuteAsync("ConductorActualizar", new
                 {
                     entity.IdConductor,
-                    entity.Nombre,
-                    entity.Apellido,
+                    entity.NombreCompleto,
                     entity.Cedula,
                     entity.Telefono,
                     entity.Estado

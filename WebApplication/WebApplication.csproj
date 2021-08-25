@@ -6,10 +6,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="wwwroot\App\Camion\Edit.ts" />
+    <Content Remove="wwwroot\App\Camion\Grid.ts" />
     <Content Remove="wwwroot\App\Categoria\Edit.ts" />
     <Content Remove="wwwroot\App\Categoria\Grid.ts" />
     <Content Remove="wwwroot\App\Cliente\Edit.ts" />
     <Content Remove="wwwroot\App\Cliente\Grid.ts" />
+    <Content Remove="wwwroot\App\Conductor\Edit.ts" />
+    <Content Remove="wwwroot\App\Conductor\Grid.ts" />
     <Content Remove="wwwroot\App\Entrega\Edit.ts" />
     <Content Remove="wwwroot\App\Entrega\Grid.ts" />
     <Content Remove="wwwroot\App\Pedido\Edit.ts" />
@@ -31,10 +35,14 @@
   </ItemGroup>
 
   <ItemGroup>
+    <TypeScriptCompile Include="wwwroot\App\Camion\Edit.ts" />
+    <TypeScriptCompile Include="wwwroot\App\Camion\Grid.ts" />
     <TypeScriptCompile Include="wwwroot\App\Categoria\Edit.ts" />
     <TypeScriptCompile Include="wwwroot\App\Categoria\Grid.ts" />
     <TypeScriptCompile Include="wwwroot\App\Cliente\Edit.ts" />
     <TypeScriptCompile Include="wwwroot\App\Cliente\Grid.ts" />
+    <TypeScriptCompile Include="wwwroot\App\Conductor\Edit.ts" />
+    <TypeScriptCompile Include="wwwroot\App\Conductor\Grid.ts" />
     <TypeScriptCompile Include="wwwroot\App\Entrega\Edit.ts" />
     <TypeScriptCompile Include="wwwroot\App\Entrega\Grid.ts" />
     <TypeScriptCompile Include="wwwroot\App\Pedido\Edit.ts" />

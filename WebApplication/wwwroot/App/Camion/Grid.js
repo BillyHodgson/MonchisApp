@@ -1,17 +1,17 @@
 "use strict";
-var EntregaGrid;
-(function (EntregaGrid) {
+var CamionGrid;
+(function (CamionGrid) {
     function OnClickEliminar(id) {
-        ComfirmAlert("Desea eliminar esta Entrega? ", "Eliminar", "warning", "#3085d6", "#d33")
+        ComfirmAlert("Desea eliminar el registro? ", "Eliminar", "warning", "#3085d6", "#d33")
             .then(function (result) {
             if (result.isConfirmed) {
                 //animacion
                 Loading.fire("Borrando..");
-                App.AxiosProvider.EntregaEliminar(id).then(function (data) {
+                App.AxiosProvider.CamionEliminar(id).then(function (data) {
                     //cerrar animacion
                     Loading.close();
                     if (data.CodeError == 0) {
-                        Toast.fire({ title: "Se elimino correctamente!", icon: "success" }).then(function () { return window.location.href = "Entrega/Grid"; });
+                        Toast.fire({ title: "Se elimino correctamente!", icon: "success" }).then(function () { return window.location.href = "Camion/Grid"; });
                     }
                     else {
                         Toast.fire({ title: data.MsgError, icon: "error" });
@@ -20,7 +20,7 @@ var EntregaGrid;
             }
         });
     }
-    EntregaGrid.OnClickEliminar = OnClickEliminar;
+    CamionGrid.OnClickEliminar = OnClickEliminar;
     $("#GridView").DataTable();
-})(EntregaGrid || (EntregaGrid = {}));
+})(CamionGrid || (CamionGrid = {}));
 //# sourceMappingURL=Grid.js.map

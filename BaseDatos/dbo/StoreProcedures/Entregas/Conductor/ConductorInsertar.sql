@@ -1,6 +1,5 @@
 ﻿CREATE PROCEDURE [dbo].[ConductorInsertar]
-	@Nombre VARCHAR(250),
-	@Apellido VARCHAR(250),
+	@NombreCompleto VARCHAR(250),
 	@Cedula VARCHAR(250),
 	@Telefono INT,
 	@Estado BIT
@@ -13,15 +12,13 @@ AS
 
    INSERT INTO Conductor 
    (
-    Nombre,
-	Apellido,
+    NombreCompleto,
 	Cedula,
 	Telefono,
 	Estado)
    VALUES
    (
-     @Nombre
-	,@Apellido
+     @NombreCompleto
 	,@Cedula
 	,@Telefono
 	,@Estado

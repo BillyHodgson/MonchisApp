@@ -1,0 +1,61 @@
+﻿@page
+@model WebApplication.Pages.Conductor.GridModel
+@{
+}
+
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            Conductor
+        </div>
+        <div class="card-body">
+            <a class="btn btn-outline-primary" asp-page="Edit">
+                <i class='bx bx-add-to-queue'></i>
+            </a>
+            <div class="row">
+                <div class="col-12">
+                    <table id="GridView" class="table table-bordered table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th>IdConductor</th>
+                                <th>NombreCompleto</th>
+                                <th>Cedula</th>
+                                <th>Telefono</th>
+                                <th>Acción</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.GridList)
+                            {
+                            <tr>
+                                <td>@item.IdConductor</td>
+                                <td>@item.NombreCompleto</td>
+                                <td>@item.Cedula</td>
+                                <td>@item.Telefono</td>
+
+                                <td>
+                                    <a class="btn btn-outline-primary" asp-page="Edit" asp-route-id="@item.IdConductor">
+                                        <i class='bx bxs-edit'></i>
+                                    </a>
+
+                                    <button type="button" class="btn btn-outline-primary"
+                                            onclick="ConductorGrid.OnClickEliminar(@item.IdConductor)">
+                                        <i class='bx bx-trash'></i>
+                                    </button>
+                                </td>
+                            </tr>
+}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+@section Scripts {
+
+    <script defer src="~/App/Conductor/Grid.js"></script>
+}

@@ -1,7 +1,6 @@
 ﻿CREATE PROCEDURE [dbo].[ConductorActualizar]
 	@IdConductor INT,
-    @Nombre VARCHAR(250),
-	@Apellido VARCHAR(250),
+    @NombreCompleto VARCHAR(250),
 	@Cedula VARCHAR(250),
 	@Telefono INT,
 	@Estado BIT
@@ -14,8 +13,7 @@ SET NOCOUNT ON
 	-- AQUI VA EL CODIGO
 		
 	UPDATE dbo.Conductor SET
-    Nombre=@Nombre,
-	Apellido=@Apellido,
+    NombreCompleto=@NombreCompleto,
 	Cedula=@Cedula,
 	Telefono=@Telefono,
 	Estado=@Estado

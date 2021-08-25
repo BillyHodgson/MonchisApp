@@ -1,0 +1,63 @@
+﻿@page
+@model WebApplication.Pages.Camion.GridModel
+@{
+}
+
+
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            Camion
+        </div>
+        <div class="card-body">
+            <div class="mb-2">
+                <a class="btn btn-outline-primary" asp-page="Edit">
+                    <i class='bx bx-add-to-queue'></i>
+                </a>
+                <a type="button" class="btn btn-outline-primary" asp-page="/Conductor/Grid">Gestionar Conductores</a>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <table id="GridView" class="table table-bordered table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th>IdCamion</th>
+                                <th>Conductor</th>
+                                <th>Caracteristicas</th>
+                                <th>Estado</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.GridList)
+                            {
+                                <tr>
+                                    <td>@item.IdCamion</td>
+                                    <td>@item.Conductor.NombreCompleto</td>
+                                    <td>@item.Caracteristicas</td>
+                                    <td>@(item.Estado ? "Activo" :"Inactivo")</td>
+                                    <td>
+                                        <a class="btn btn-outline-primary" asp-page="Edit" asp-route-id="@item.IdCamion">
+                                            <i class='bx bxs-edit'></i>
+                                        </a>
+
+                                        <button type="button" class="btn btn-outline-primary"
+                                                onclick="CamionGrid.OnClickEliminar(@item.IdCamion)">
+                                            <i class='bx bx-trash'></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+@section Scripts {
+
+    <script defer src="~/App/Camion/Grid.js"></script>
+}
