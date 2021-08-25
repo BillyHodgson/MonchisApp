@@ -22,6 +22,9 @@ namespace WebApplication.Pages.Entregas
 
         public EntregaEntity Entity = new EntregaEntity();
 
+        public IEnumerable<CamionEntity> CamionLista { get; set; } = new List<CamionEntity>();
+
+        public IEnumerable<PedidoEntity> PedidoLista { get; set; } = new List<PedidoEntity>();
 
         public async Task<IActionResult> OnGet()
         {

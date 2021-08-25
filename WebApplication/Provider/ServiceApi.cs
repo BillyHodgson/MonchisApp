@@ -77,7 +77,11 @@ namespace WebApplication
 
         }
 
-
+        public async Task<IEnumerable<PedidoEntity>> PedidoGetLista()
+        {
+            var result = await client.ServicioGetAsync<IEnumerable<PedidoEntity>>("api/Pedido/Lista");
+            return result;
+        }
 
         #endregion
 
