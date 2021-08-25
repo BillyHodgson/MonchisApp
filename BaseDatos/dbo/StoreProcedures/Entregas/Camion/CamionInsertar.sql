@@ -13,7 +13,7 @@ SET NOCOUNT ON
 		
 		INSERT INTO dbo.Camion 
 		(
-	     IdConductor
+	      IdConductor
 	    , Caracteristicas 
 	    , Estado
 		)

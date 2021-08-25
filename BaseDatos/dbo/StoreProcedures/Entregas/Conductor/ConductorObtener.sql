@@ -9,7 +9,7 @@ AS
 	    IdConductor
 	  , NombreCompleto
 	  , Cedula
-	  ,Telefono
+	  , Telefono
 	  , Estado
 	FROM Conductor
 	WHERE (@IdConductor IS NULL OR IdConductor=@IdConductor)

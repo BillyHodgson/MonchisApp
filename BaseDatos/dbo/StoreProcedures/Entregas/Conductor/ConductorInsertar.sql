@@ -1,7 +1,7 @@
 ﻿CREATE PROCEDURE [dbo].[ConductorInsertar]
 	@NombreCompleto VARCHAR(250),
 	@Cedula VARCHAR(250),
-	@Telefono INT,
+	@Telefono VARCHAR(250),
 	@Estado BIT
 AS
  BEGIN

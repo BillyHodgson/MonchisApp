@@ -9,7 +9,7 @@
             Servicio(entity) {
                 console.log(entity)
                 if (entity.IdConductor == null) {
-                    return App.AxiosProvider.ConductorGuardar(entity);
+                   return App.AxiosProvider.ConductorGuardar(entity);
                 } else {
                     return App.AxiosProvider.ConductorActualizar(entity);
                 }

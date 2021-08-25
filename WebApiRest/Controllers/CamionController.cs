@@ -11,97 +11,91 @@ namespace WebApiRest.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ConductorController : ControllerBase
+    public class CamionController : ControllerBase
     {
-        private readonly IConductorService conductorService;
+        private readonly ICamionService camionService;
 
-        public ConductorController(IConductorService conductorService )
+        public CamionController(ICamionService camionService)
         {
-            this.conductorService = conductorService;
+            this.camionService = camionService;
         }
 
-
         [HttpGet]
-        public async Task<IEnumerable<ConductorEntity>> Get()
+        public async Task<IEnumerable<CamionEntity>> Get()
         {
             try
             {
-                return await conductorService.Get();
+                return await camionService.Get();
             }
             catch (Exception ex)
             {
 
-                return new List<ConductorEntity>();
+                return new List<CamionEntity>();
             }
         }
 
         [HttpGet("Lista")]
-        public async Task<IEnumerable<ConductorEntity>> GetLista()
+        public async Task<IEnumerable<CamionEntity>> GetLista()
         {
             try
             {
-                return await conductorService.Get();
+                return await camionService.Get();
             }
             catch (Exception ex)
             {
 
-                return new List<ConductorEntity>();
+                return new List<CamionEntity>();
             }
         }
 
         [HttpGet("{id}")]
-        public async Task<ConductorEntity> GetById(int id)
+        public async Task<CamionEntity> GetById(int id)
         {
             try
             {
-                return await conductorService.GetById(new ConductorEntity { IdConductor = id });
+                return await camionService.GetById(new CamionEntity { IdCamion = id });
             }
             catch (Exception ex)
             {
-
-                return new ConductorEntity { CodeError = ex.HResult, MsgError = ex.Message };
+                return new CamionEntity { CodeError = ex.HResult, MsgError = ex.Message };
             }
         }
 
         [HttpPost]
-        public async Task<DBEntity> Create(ConductorEntity entity)
+        public async Task<DBEntity> Create(CamionEntity entity)
         {
             try
             {
-                return await conductorService.Create(entity);
+                return await camionService.Create(entity);
             }
             catch (Exception ex)
             {
-
                 return new DBEntity { CodeError = ex.HResult, MsgError = ex.Message };
             }
         }
 
         [HttpPut]
-        public async Task<DBEntity> Update(ConductorEntity entity)
+        public async Task<DBEntity> Update(CamionEntity entity)
         {
             try
             {
-                return await conductorService.Update(entity);
+                return await camionService.Update(entity);
             }
             catch (Exception ex)
             {
-
                 return new DBEntity { CodeError = ex.HResult, MsgError = ex.Message };
             }
         }
-
 
         [HttpDelete("{id}")]
         public async Task<DBEntity> Delete(int id)
         {
             try
             {
-                return await conductorService.Delete(new ConductorEntity() { IdConductor = id });
+                return await camionService.Delete(new CamionEntity() { IdCamion = id });
             }
             catch (Exception ex)
             {
-
                 return new DBEntity { CodeError = ex.HResult, MsgError = ex.Message };
             }
         }

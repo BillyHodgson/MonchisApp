@@ -7,19 +7,12 @@ AS
 
 		SELECT 
 		IdCamion,
-		IdConductor,
-		Caracteristicas,
-		Estado
+		Caracteristicas
 
 		FROM	
 			dbo.Camion
 
 			WHERE
 					Estado=1
-
-
-
-
-
 
 	END

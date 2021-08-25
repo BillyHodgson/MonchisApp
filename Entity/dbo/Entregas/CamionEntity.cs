@@ -13,11 +13,10 @@ namespace Entity
             Conductor = Conductor ?? new ConductorEntity();
         }
 
-        public int? IdCamion { get; set; }
-
+        public int? IdCamion { get; set; }       
+        public string Caracteristicas { get; set; }
         public int? IdConductor { get; set; }
         public virtual ConductorEntity Conductor { get; set; }
-        public string Caracteristicas { get; set; }
 
     }
 }

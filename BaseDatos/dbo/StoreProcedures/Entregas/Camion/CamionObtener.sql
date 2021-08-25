@@ -10,13 +10,11 @@ AS BEGIN
 		,   V.Estado
 		,   MV.IdConductor
 		,	MV.NombreCompleto
-
 	
-				
 
 	FROM dbo.Camion V
 	 INNER JOIN dbo.Conductor MV
-         ON V.IdConductor = MV.IdConductor
+         ON MV.IdConductor = V.IdConductor
 	WHERE
 	     (@IdCamion IS NULL OR IdCamion=@IdCamion)
 

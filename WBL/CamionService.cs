@@ -31,7 +31,7 @@ namespace WBL
         {
             try
             {
-                var result = sql.QueryAsync<CamionEntity, ConductorEntity>("CamionObtener", "IdCamion,IdConductor");
+                var result = sql.QueryAsync<CamionEntity, ConductorEntity>("CamionObtener", "IdConductor");
 
                 return await result;
 

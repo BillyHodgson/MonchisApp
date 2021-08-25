@@ -8,7 +8,7 @@ namespace Entity
 {
     public class ConductorEntity : EN
     {
-        public int IdConductor { get; set; }
+        public int? IdConductor { get; set; }
 
         public string NombreCompleto { get; set; }
 
