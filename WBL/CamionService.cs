@@ -92,7 +92,7 @@ namespace WBL
         {
             try
             {
-                var result = sql.ExecuteAsync("VehiculoActualizar", new
+                var result = sql.ExecuteAsync("CamionActualizar", new
                 {
                     entity.IdCamion,
                     entity.IdConductor,

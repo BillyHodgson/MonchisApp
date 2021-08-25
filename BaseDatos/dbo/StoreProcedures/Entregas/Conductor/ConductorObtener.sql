@@ -8,9 +8,6 @@ AS
 	SELECT 
 	    IdConductor
 	  , NombreCompleto
-	  , Cedula
-	  , Telefono
-	  , Estado
 	FROM Conductor
 	WHERE (@IdConductor IS NULL OR IdConductor=@IdConductor)
 
