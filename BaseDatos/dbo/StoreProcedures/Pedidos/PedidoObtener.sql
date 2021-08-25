@@ -13,6 +13,7 @@ AS BEGIN
 		,   V.SubTotal
 		,   V.Impuesto
 		,   V.Total
+		,   V.Estado
 		,   MV.IdCliente
 		,   MV.NombreCompleto
 		,	MA.IdProducto

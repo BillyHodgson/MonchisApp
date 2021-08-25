@@ -1,6 +1,7 @@
 ﻿CREATE PROCEDURE [dbo].[EntregaActualizar]
 	@IdEntrega INT,
 	@FechaEntrega DATE,
+	@IdPedido INT,
     @Destino VARCHAR(250),
 	@IdCamion INT, 
 	@Estado BIT
@@ -14,6 +15,7 @@ SET NOCOUNT ON
 		
 	UPDATE dbo.Entrega SET
 	FechaEntrega=@FechaEntrega,
+	IdPedido=@IdPedido,
     Destino=@Destino,
 	IdCamion=@IdCamion, 
 	Estado=@Estado

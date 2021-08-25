@@ -77,7 +77,8 @@ namespace WBL
                     entity.Envio,
                     entity.SubTotal,  
                     entity.Impuesto,
-                    entity.Total
+                    entity.Total,
+                    entity.Estado
                 });
 
                 return await result;
@@ -106,7 +107,8 @@ namespace WBL
                     entity.Envio,
                     entity.SubTotal,
                     entity.Impuesto,
-                    entity.Total
+                    entity.Total,
+                    entity.Estado
                 });
 
                 return await result;

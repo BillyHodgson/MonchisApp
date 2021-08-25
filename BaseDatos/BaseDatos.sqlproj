@@ -115,5 +115,6 @@
     <Build Include="dbo\StoreProcedures\Clientes\ClienteInsertar.sql" />
     <Build Include="dbo\StoreProcedures\Clientes\ClienteLista.sql" />
     <Build Include="dbo\StoreProcedures\Clientes\ClienteObtener.sql" />
+    <Build Include="dbo\StoreProcedures\Pedidos\PedidoLista.sql" />
   </ItemGroup>
 </Project>

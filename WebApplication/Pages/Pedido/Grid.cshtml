@@ -48,9 +48,8 @@
                             <td>@item.PrecioUnitario</td>
                             <td>@item.Cantidad</td>
                             <td>@item.Envio</td>
-                            <td>@item.SubTotal</td>
+                            <td>@((item.Cantidad*item.PrecioUnitario)+item.Envio)</td>
                             <td>@item.Impuesto</td>
-                            <td>@((item.Impuesto/100)* item.SubTotal)</td>
                             <td>@item.Total</td>
                             <td>@(item.Estado ?"Activo" :"Inactivo")</td>
                             <td>

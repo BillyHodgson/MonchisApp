@@ -39,8 +39,12 @@
 
                 <div class="form-group mb-3">
                     <label for="Entity.IdCamion" class="form-label">Camion</label>
-                    <input type="text" class="form-control" asp-for="Entity.IdCamion" v-model="Entity.IdCamion" maxlength="250" required>
 
+                    <select asp-for="Entity.IdCamion" class="form-select" v-model="Entity.IdCamion"
+                            asp-items="@(new SelectList(Model.CamionLista,"IdCamion","Caracteristicas"))"
+                            required>
+                        <option value=""></option>
+                    </select>
                 </div>
 
                 <div class="form-group form-check form-switch">

@@ -8,7 +8,8 @@
 	@Envio DECIMAL (18,2),
 	@SubTotal DECIMAL (18,2),
 	@Impuesto DECIMAL (18,2),
-	@Total DECIMAL (18,2)
+	@Total DECIMAL (18,2),
+	@Estado BIT
 
 AS BEGIN
 SET NOCOUNT ON
@@ -27,7 +28,8 @@ SET NOCOUNT ON
 	Envio=@Envio,
 	Subtotal=@SubTotal,
 	Impuesto=@Impuesto, 
-	Total=@Total
+	Total=@Total,
+	Estado=@Estado
 
 	WHERE IdPedido=@IdPedido
 

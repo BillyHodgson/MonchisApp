@@ -34,6 +34,22 @@ namespace WebApiRest.Controllers
             }
         }
 
+
+        [HttpGet("Lista")]
+        public async Task<IEnumerable<PedidoEntity>> GetLista()
+        {
+            try
+            {
+                return await pedidoService.Get();
+            }
+            catch (Exception ex)
+            {
+
+                return new List<PedidoEntity>();
+            }
+        }
+
+
         [HttpGet("{id}")]
         public async Task<PedidoEntity> GetById(int id)
         {

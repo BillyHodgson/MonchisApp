@@ -30,7 +30,7 @@ namespace WBL
         {
             try
             {
-                var result = sql.QueryAsync<EntregaEntity, PedidoEntity, CamionEntity>("EntregaObtener", "IdEntrega,IdPedido,IdCamion");
+                var result = sql.QueryAsync<EntregaEntity, PedidoEntity, CamionEntity>("EntregaObtener", "IdPedido,IdCamion");
 
                 return await result;
 
@@ -128,8 +128,6 @@ namespace WBL
 
                 throw;
             }
-
-
         }
 
     }

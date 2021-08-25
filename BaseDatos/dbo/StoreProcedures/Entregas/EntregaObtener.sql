@@ -10,17 +10,13 @@ AS BEGIN
 		,	V.Destino
 		,   V.Estado
 		,   MV.IdPedido
-		,   A.IdCamion
-
-
-	
-				
+		,   A.IdCamion			
 
 	FROM dbo.Entrega V
 	 INNER JOIN dbo.Pedido MV
-         ON V.IdPedido = MV.IdPedido
+         ON MV.IdPedido = V.IdPedido
      INNER JOIN dbo.Camion A
-         ON A.IdCamion = A.IdCamion
+         ON A.IdCamion = V.IdCamion
 	WHERE
 	     (@IdEntrega IS NULL OR IdEntrega=@IdEntrega)
 

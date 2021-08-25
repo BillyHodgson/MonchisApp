@@ -7,7 +7,8 @@
 	@SubTotal DECIMAL (18,2),
 	@Envio DECIMAL (18,2),
 	@Impuesto DECIMAL (18,2),
-	@Total DECIMAL (18,2)
+	@Total DECIMAL (18,2),
+	@Estado BIT
 	
 AS BEGIN
 SET NOCOUNT ON
@@ -28,6 +29,7 @@ SET NOCOUNT ON
 		, SubTotal
 		, Impuesto
 		, Total
+		, Estado
 		)
 		VALUES
 		(
@@ -40,6 +42,7 @@ SET NOCOUNT ON
 		, @SubTotal
 		, @Impuesto
 		, @Total
+		, @Estado
 		)
 
 
