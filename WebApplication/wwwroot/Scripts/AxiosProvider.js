@@ -51,6 +51,18 @@ var App;
             var data = _a.data;
             return data;
         }); };
+        AxiosProvider.EntregaEliminar = function (id) { return ServiceApi.delete("api/Entrega/" + id).then(function (_a) {
+            var data = _a.data;
+            return data;
+        }); };
+        AxiosProvider.EntregaGuardar = function (entity) { return ServiceApi.post("api/Entrega", entity).then(function (_a) {
+            var data = _a.data;
+            return data;
+        }); };
+        AxiosProvider.EntregaActualizar = function (entity) { return ServiceApi.put("api/Entrega", entity).then(function (_a) {
+            var data = _a.data;
+            return data;
+        }); };
     })(AxiosProvider = App.AxiosProvider || (App.AxiosProvider = {}));
 })(App || (App = {}));
 //# sourceMappingURL=AxiosProvider.js.map

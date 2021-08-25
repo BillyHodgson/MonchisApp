@@ -20,6 +20,7 @@ namespace WebApiRest
             services.AddTransient<IProductosService, ProductosService>();
             services.AddTransient<IPedidoService, PedidoService>();
             services.AddTransient<IClienteService, ClienteService>();
+            services.AddTransient<IEntregaService, EntregaService>();
 
             return services;
         }

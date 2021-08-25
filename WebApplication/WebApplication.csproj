@@ -10,6 +10,8 @@
     <Content Remove="wwwroot\App\Categoria\Grid.ts" />
     <Content Remove="wwwroot\App\Cliente\Edit.ts" />
     <Content Remove="wwwroot\App\Cliente\Grid.ts" />
+    <Content Remove="wwwroot\App\Entrega\Edit.ts" />
+    <Content Remove="wwwroot\App\Entrega\Grid.ts" />
     <Content Remove="wwwroot\App\Pedido\Edit.ts" />
     <Content Remove="wwwroot\App\Pedido\Grid.ts" />
     <Content Remove="wwwroot\App\Productos\Edit.ts" />
@@ -33,6 +35,8 @@
     <TypeScriptCompile Include="wwwroot\App\Categoria\Grid.ts" />
     <TypeScriptCompile Include="wwwroot\App\Cliente\Edit.ts" />
     <TypeScriptCompile Include="wwwroot\App\Cliente\Grid.ts" />
+    <TypeScriptCompile Include="wwwroot\App\Entrega\Edit.ts" />
+    <TypeScriptCompile Include="wwwroot\App\Entrega\Grid.ts" />
     <TypeScriptCompile Include="wwwroot\App\Pedido\Edit.ts" />
     <TypeScriptCompile Include="wwwroot\App\Pedido\Grid.ts" />
     <TypeScriptCompile Include="wwwroot\App\Productos\Edit.ts" />

@@ -8,7 +8,16 @@ using System.Threading.Tasks;
 
 namespace WBL
 {
-    public class EntregaService
+    public interface IEntregaService
+    {
+        Task<DBEntity> Create(EntregaEntity entity);
+        Task<DBEntity> Delete(EntregaEntity entity);
+        Task<IEnumerable<EntregaEntity>> Get();
+        Task<EntregaEntity> GetById(EntregaEntity entity);
+        Task<DBEntity> Update(EntregaEntity entity);
+    }
+
+    public class EntregaService : IEntregaService
     {
         private readonly IDataAccess sql;
 
@@ -32,25 +41,25 @@ namespace WBL
                 throw;
             }
         }
-            public async Task<EntregaEntity> GetById(EntregaEntity entity)
+        public async Task<EntregaEntity> GetById(EntregaEntity entity)
+        {
+            try
             {
-                try
+                var result = sql.QueryFirstAsync<EntregaEntity>("EntregaObtener", new
                 {
-                    var result = sql.QueryFirstAsync<EntregaEntity>("EntregaObtener", new
-                    {
-                        entity.IdEntrega
-                    });
+                    entity.IdEntrega
+                });
 
-                    return await result;
-                }
-                catch (Exception)
-                {
-
-                    throw;
-                }
-
-
+                return await result;
             }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+
+        }
 
 
         public async Task<DBEntity> Create(EntregaEntity entity)

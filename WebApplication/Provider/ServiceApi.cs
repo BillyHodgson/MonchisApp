@@ -113,5 +113,36 @@ namespace WebApplication
 
         #endregion
 
+        #region Entrega
+
+        public async Task<IEnumerable<EntregaEntity>> EntregaGet()
+        {
+            var result = await client.ServicioGetAsync<IEnumerable<EntregaEntity>>("api/Entrega");
+
+            return result;
+
+
+        }
+
+        public async Task<IEnumerable<EntregaEntity>> EntregaGetLista()
+        {
+            var result = await client.ServicioGetAsync<IEnumerable<EntregaEntity>>("api/Entrega/Lista");
+
+            return result;
+
+        }
+
+        public async Task<EntregaEntity> EntregaGetById(int id)
+        {
+            var result = await client.ServicioGetAsync<EntregaEntity>("api/Entrega/" + id);
+
+            if (result.CodeError is not 0) throw new Exception(result.MsgError);
+
+            return result;
+
+
+        }
+        #endregion
+
     }
 }
