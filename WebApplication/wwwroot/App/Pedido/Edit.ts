@@ -10,25 +10,44 @@
         },
 
         methods: {
-            OnChangeProducto() {
+            async OnChangeProducto() {
                 Loading.fire("Cargando..");
-                console.log(this.Entity);
-                App.AxiosProvider.PedidoChangeProducto(this.Entity).then(data => {
+                await App.AxiosProvider.PedidoChangeProducto(this.Entity).then(data => {
                     Loading.close();
                     this.Entity.Producto = data;
-
                 });
+                this.Calcular();
             },
 
-            CalculoMontoTotalFn() {
-                var total = ((this.Entity.Impuesto / 100) * this.Entity.Monto) + this.Entity.Monto;
-                return total;
+            OnChangeCantidad() {               
+                this.Calcular();
+                if (this.Entity.Cantidad < 1) {
+                    this.Entity.Cantidad = 1;
+                    Toast.fire({ title: "No es posible comprar menos de una unidad", icon: "error" });
+                }
+                if (this.Entity.Cantidad > this.Entity.Producto.Cantidad) {
+                    this.Entity.Cantidad = this.Entity.Producto.Cantidad
+                    Toast.fire({ title: "No es posible comprar mas de lo disponible en stock", icon: "error" });
+                }
             },
+
+             OnChangeCostoEnvio() {
+                 this.Calcular();
+            },
+
+            Calcular() {
+                this.Entity.SubTotal = this.Entity.Cantidad * this.Entity.Producto.Precio + this.Entity.Envio
+                this.Entity.Impuesto = ((this.Entity.Cantidad * this.Entity.Producto.Precio + this.Entity.Envio) * 0.13).toFixed(2)
+                this.Entity.Total = ((this.Entity.Cantidad * this.Entity.Producto.Precio + this.Entity.Envio) * 1.13).toFixed(2)
+            },
+
             CompraServicio(entity) {
 
-                if (entity.IdCompra == null) {
+                if (this.Entity.IdPedido == null) {
+                    console.log("aaa")
                     return App.AxiosProvider.PedidoGuardar(entity);
                 } else {
+                    console.log("bbb")
                     return App.AxiosProvider.PedidoActualizar(entity);
                 }
             },
@@ -37,9 +56,10 @@
 
                 App.AxiosProvider.PedidoChangeProducto(this.Entity).then(data => {
                     Loading.close();
-                    console.log(data);
+    
                 });
             },
+
             Save() {
 
                 if (BValidateData(this.Formulario)) {
@@ -77,11 +97,9 @@
 
         },
 
-        computed: {
-            CalculoMontoTotalCP: function (): number {
-                var total = ((this.Entity.Impuesto / 100) * this.Entity.SubTotal) + this.Entity.SubTotal;
-                return total;
-            }
+        created() {
+            console.log(this.Entity)
+            this.OnChangeProducto()
         }
 
     });

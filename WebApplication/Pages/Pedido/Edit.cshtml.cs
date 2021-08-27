@@ -61,8 +61,6 @@ namespace WebApplication.Pages.Pedido
             {
                 try
                 {
-                Debug.WriteLine("======================================");
-                Debug.WriteLine(Entity.IdProducto);
                 var result = await productosService.GetById(
                           new ProductosEntity { IdProducto = Entity.IdProducto }
                         );

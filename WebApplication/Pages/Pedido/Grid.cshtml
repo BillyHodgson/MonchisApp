@@ -29,7 +29,8 @@
                             <th>Fecha Pedido</th>
                             <th>Producto</th>
                             <th>Cantidad</th>
-                            <th>Envio</th>
+                            <th>Costo Envio</th>
+                            <th>SubTotal</th>
                             <th>Impuesto</th>
                             <th>Total</th>
                             <th>Estado</th>
@@ -46,6 +47,7 @@
                             <td>@item.Producto.Nombre</td>
                             <td>@item.Cantidad</td>
                             <td>@item.Envio</td>
+                            <td>@item.SubTotal</td>
                             <td>@item.Impuesto</td>
                             <td>@item.Total</td>
                             <td>@(item.Estado ?"Activo" :"Inactivo")</td>
