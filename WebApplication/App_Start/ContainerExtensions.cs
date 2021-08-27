@@ -15,6 +15,11 @@ namespace WebApplication
         {
 
             services.AddSingleton<IDataAccess, DataAccess>();
+            services.AddTransient<IProductosService, ProductosService>();
+            services.AddTransient<IEntregaService, EntregaService>();
+            services.AddTransient<ICatalogoProvinciaService, CatalogoProvinciaService>();
+            services.AddTransient<ICatalogoCantonService, CatalogoCantonService>();
+            services.AddTransient<ICatalogoDistritoService, CatalogoDistritoService>();
             return services;
         }
     }

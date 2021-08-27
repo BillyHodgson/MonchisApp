@@ -51,6 +51,10 @@ var App;
             var data = _a.data;
             return data;
         }); };
+        AxiosProvider.PedidoChangeProducto = function (entity) { return axios.post("Pedido/Edit?handler=ChangeProducto", entity).then(function (_a) {
+            var data = _a.data;
+            return data;
+        }); };
         AxiosProvider.EntregaEliminar = function (id) { return ServiceApi.delete("api/Entrega/" + id).then(function (_a) {
             var data = _a.data;
             return data;
@@ -60,6 +64,14 @@ var App;
             return data;
         }); };
         AxiosProvider.EntregaActualizar = function (entity) { return ServiceApi.put("api/Entrega", entity).then(function (_a) {
+            var data = _a.data;
+            return data;
+        }); };
+        AxiosProvider.EntregaChangeProvincia = function (entity) { return axios.post("Entrega/Edit?handler=ChangeProvincia", entity).then(function (_a) {
+            var data = _a.data;
+            return data;
+        }); };
+        AxiosProvider.EntregaChangeCanton = function (entity) { return axios.post("Entrega/Edit?handler=ChangeCanton", entity).then(function (_a) {
             var data = _a.data;
             return data;
         }); };

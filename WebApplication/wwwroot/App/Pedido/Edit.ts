@@ -10,6 +10,15 @@
         },
 
         methods: {
+            OnChangeProducto() {
+                Loading.fire("Cargando..");
+                console.log(this.Entity);
+                App.AxiosProvider.PedidoChangeProducto(this.Entity).then(data => {
+                    Loading.close();
+                    this.Entity.Producto = data;
+
+                });
+            },
 
             CalculoMontoTotalFn() {
                 var total = ((this.Entity.Impuesto / 100) * this.Entity.Monto) + this.Entity.Monto;
@@ -23,8 +32,13 @@
                     return App.AxiosProvider.PedidoActualizar(entity);
                 }
             },
-            xxx() {
-                console.log("xxx")
+            consultarPrecioUnitario() {
+                Loading.fire("Cargando..");
+
+                App.AxiosProvider.PedidoChangeProducto(this.Entity).then(data => {
+                    Loading.close();
+                    console.log(data);
+                });
             },
             Save() {
 

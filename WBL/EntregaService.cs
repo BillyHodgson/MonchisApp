@@ -30,7 +30,12 @@ namespace WBL
         {
             try
             {
-                var result = sql.QueryAsync<EntregaEntity, PedidoEntity, CamionEntity>("EntregaObtener", "IdPedido,IdCamion");
+                var result = sql.QueryAsync<EntregaEntity, 
+                        CatalogoProvinciaEntity,
+                        CatalogoCantonEntity,
+                        CatalogoDistritoEntity, 
+                        PedidoEntity, 
+                        CamionEntity>("EntregaObtener", "IdCatalogoProvincia,IdCatalogoCanton,IdCatalogoDistrito,IdPedido,IdCamion");
 
                 return await result;
 
@@ -70,7 +75,9 @@ namespace WBL
                 {
                     entity.FechaEntrega,
                     entity.IdPedido,
-                    entity.Destino,
+                    entity.IdCatalogoProvincia,
+                    entity.IdCatalogoCanton,
+                    entity.IdCatalogoDistrito,
                     entity.IdCamion,
                     entity.Estado,
                 });
@@ -95,7 +102,9 @@ namespace WBL
                     entity.IdEntrega,
                     entity.FechaEntrega,
                     entity.IdPedido,
-                    entity.Destino,
+                    entity.IdCatalogoProvincia,
+                    entity.IdCatalogoCanton,
+                    entity.IdCatalogoDistrito,
                     entity.IdCamion,
                     entity.Estado,
                 });

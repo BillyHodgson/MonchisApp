@@ -1,7 +1,9 @@
 ﻿CREATE PROCEDURE [dbo].[EntregaInsertar]
 	@FechaEntrega DATE,
+	@IdCatalogoProvincia INT,
+	@IdCatalogoCanton INT,
+	@IdCatalogoDistrito INT,
 	@IdPedido INT,
-	@Destino VARCHAR(250),
 	@IdCamion INT,
 	@Estado BIT
 	
@@ -16,16 +18,20 @@ SET NOCOUNT ON
 		INSERT INTO dbo.Entrega
 		(
 	     FechaEntrega 
-	    , IdPedido
-		, Destino
+		, IdCatalogoProvincia
+		,  IdCatalogoCanton
+		,  IdCatalogoDistrito
+		, IdPedido
 		, IdCamion
 		, Estado
 		)
 		VALUES
 		(
 		  @FechaEntrega 
-	    , @IdPedido
-		, @Destino
+		, @IdCatalogoProvincia
+		 , @IdCatalogoCanton
+		 , @IdCatalogoDistrito
+		, @IdPedido
 		, @IdCamion
 		, @Estado
 		)

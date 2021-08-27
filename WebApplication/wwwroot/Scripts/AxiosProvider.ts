@@ -16,10 +16,13 @@ namespace App.AxiosProvider   {
     export const PedidoEliminar = (id) => ServiceApi.delete<DBEntity>("api/Pedido/" + id).then(({ data }) => data);
     export const PedidoGuardar = (entity) => ServiceApi.post<DBEntity>("api/Pedido", entity).then(({ data }) => data);
     export const PedidoActualizar = (entity) => ServiceApi.put<DBEntity>("api/Pedido", entity).then(({ data }) => data);
+    export const PedidoChangeProducto = (entity) => axios.post<any[]>("Pedido/Edit?handler=ChangeProducto", entity).then(({ data }) => data);
 
     export const EntregaEliminar = (id) => ServiceApi.delete<DBEntity>("api/Entrega/" + id).then(({ data }) => data);
     export const EntregaGuardar = (entity) => ServiceApi.post<DBEntity>("api/Entrega", entity).then(({ data }) => data);
     export const EntregaActualizar = (entity) => ServiceApi.put<DBEntity>("api/Entrega", entity).then(({ data }) => data);
+    export const EntregaChangeProvincia = (entity) => axios.post<any[]>("Entrega/Edit?handler=ChangeProvincia", entity).then(({ data }) => data);
+    export const EntregaChangeCanton = (entity) => axios.post<any[]>("Entrega/Edit?handler=ChangeCanton", entity).then(({ data }) => data);
 
     export const CamionEliminar = (id) => ServiceApi.delete<DBEntity>("api/Camion/" + id).then(({ data }) => data);
     export const CamionGuardar = (entity) => ServiceApi.post<DBEntity>("api/Camion", entity).then(({ data }) => data);

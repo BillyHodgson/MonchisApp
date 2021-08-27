@@ -6,6 +6,8 @@ var EntregaEdit;
         data: {
             Formulario: "#FormEdit",
             Entity: Entity,
+            CantonLista: [],
+            DistritoLista: [],
         },
         methods: {
             EntregaServicio: function (entity) {
@@ -16,6 +18,22 @@ var EntregaEdit;
                 else {
                     return App.AxiosProvider.EntregaActualizar(entity);
                 }
+            },
+            OnChangeProvincia: function () {
+                var _this = this;
+                Loading.fire("Cargando..");
+                App.AxiosProvider.EntregaChangeProvincia(this.Entity).then(function (data) {
+                    Loading.close();
+                    _this.CantonLista = data;
+                });
+            },
+            OnChangeCanton: function () {
+                var _this = this;
+                Loading.fire("Cargando..");
+                App.AxiosProvider.EntregaChangeCanton(this.Entity).then(function (data) {
+                    Loading.close();
+                    _this.DistritoLista = data;
+                });
             },
             Save: function () {
                 if (BValidateData(this.Formulario)) {
@@ -39,6 +57,10 @@ var EntregaEdit;
         mounted: function () {
             CreateValidator(this.Formulario);
         },
+        created: function () {
+            this.OnChangeProvincia();
+            this.OnChangeCanton();
+        }
     });
     Formulario.$mount("#AppEdit");
 })(EntregaEdit || (EntregaEdit = {}));

@@ -37,15 +37,15 @@
                     <label for="Entity.IdProducto" class="form-label">Producto</label>
                     <select asp-for="Entity.IdProducto" class="form-select" v-model="Entity.IdProducto"
                             asp-items="@(new SelectList(Model.ProductoLista,"IdProducto","Nombre"))"
-                            v-onchange ="consultarPrecioUnitario()"
+                            v-on:change="OnChangeProducto"
                             required>
                         <option value=""></option>
                     </select>
                 </div>
 
                 <div class="form-group mb-3">
-                    <label for="Entity.PrecioUnitario" class="form-label">Precio Unitario</label>
-                    <input type="number" class="form-control" asp-for="Entity.PrecioUnitario" v-model.number="Entity.PrecioUnitario" required>
+                    <label for="Entity." class="form-label">Precio Unitario :</label>
+                    <span class="text-info">{{Entity.Producto.Precio}}</span>
                 </div>
 
                 <div class="form-group mb-3">

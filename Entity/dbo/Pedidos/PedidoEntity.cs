@@ -20,7 +20,6 @@ namespace Entity
         public DateTime FechaPedido { get; set; } = DateTime.Today;
 
         public int Cantidad { get; set; }
-        public decimal PrecioUnitario { get; set; }
 
         public decimal Envio { get; set; }
 

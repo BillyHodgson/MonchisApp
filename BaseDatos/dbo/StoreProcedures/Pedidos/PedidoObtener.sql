@@ -8,7 +8,6 @@ AS BEGIN
 			V.IdPedido
 		,   V.FechaPedido
 		,   V.Cantidad
-		,   V.PrecioUnitario
 		,   V.Envio
 		,   V.SubTotal
 		,   V.Impuesto

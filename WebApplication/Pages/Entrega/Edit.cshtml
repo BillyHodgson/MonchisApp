@@ -32,8 +32,31 @@
                 </div>
 
                 <div class="form-group mb-3">
-                    <label for="Entity.Destino" class="form-label">Destino</label>
-                    <input type="text" class="form-control" asp-for="Entity.Destino" v-model="Entity.Destino" maxlength="250" required>
+                    <label for="Entity.IdCatalogoProvincia" class="form-label">Provincia</label>
+
+                    <select asp-for="Entity.IdCatalogoProvincia" class="form-select" v-model="Entity.IdCatalogoProvincia"
+                            asp-items="@(new SelectList(Model.ProvinciaLista,"IdCatalogoProvincia","NombreCatalogoProvincia"))"
+                            v-on:change="OnChangeProvincia"
+                            required>
+                        <option value=""></option>
+                    </select>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label for="Entity.IdCatalogoProvincia" class="form-label">Canton</label>
+
+                    <select asp-for="Entity.IdCatalogoCanton" class="form-select" v-model="Entity.IdCatalogoCanton"
+                            v-on:change="OnChangeCanton" required>
+                        <option v-for="item in CantonLista" :value="item.IdCatalogoCanton"> {{item.NombreCatalogoCanton}}</option>
+                    </select>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label for="Entity.IdCatalogoProvincia" class="form-label">Distrito</label>
+
+                    <select asp-for="Entity.IdCatalogoDistrito" v-model="Entity.IdCatalogoDistrito" class="form-select" required>
+                        <option v-for="item in DistritoLista" :value="item.IdCatalogoDistrito"> {{item.NombreCatalogoDistrito}}</option>
+                    </select>
                 </div>
 
 

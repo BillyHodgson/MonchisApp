@@ -4,7 +4,8 @@ AS
 	SET NOCOUNT ON
 
 	SELECT
-	 IdProducto
+	 IdProducto,
+	 Nombre
 	FROM Productos
 	WHERE Estado=1
 

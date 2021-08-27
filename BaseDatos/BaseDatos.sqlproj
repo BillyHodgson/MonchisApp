@@ -108,7 +108,6 @@
     <Build Include="dbo\StoreProcedures\Entregas\EntregaObtener.sql" />
     <Build Include="dbo\StoreProcedures\Entregas\EntregaActualizar.sql" />
     <Build Include="dbo\StoreProcedures\Entregas\EntregaEliminar.sql" />
-    <Build Include="dbo\StoreProcedures\Entregas\Camion\EntregaLista.sql" />
     <Build Include="dbo\StoreProcedures\Productos\ProductosLista.sql" />
     <Build Include="dbo\StoreProcedures\Clientes\ClienteActualizar.sql" />
     <Build Include="dbo\StoreProcedures\Clientes\ClienteEliminar.sql" />
@@ -116,5 +115,8 @@
     <Build Include="dbo\StoreProcedures\Clientes\ClienteLista.sql" />
     <Build Include="dbo\StoreProcedures\Clientes\ClienteObtener.sql" />
     <Build Include="dbo\StoreProcedures\Pedidos\PedidoLista.sql" />
+    <Build Include="dbo\StoreProcedures\Entregas\CatalogoCantonLista.sql" />
+    <Build Include="dbo\StoreProcedures\Entregas\CatalogoDistritoLista.sql" />
+    <Build Include="dbo\StoreProcedures\Entregas\CatalogoProvinciaLista.sql" />
   </ItemGroup>
 </Project>

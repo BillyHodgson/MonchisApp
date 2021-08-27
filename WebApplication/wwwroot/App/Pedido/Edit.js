@@ -8,6 +8,15 @@ var PedidoEdit;
             Entity: Entity,
         },
         methods: {
+            OnChangeProducto: function () {
+                var _this = this;
+                Loading.fire("Cargando..");
+                console.log(this.Entity);
+                App.AxiosProvider.PedidoChangeProducto(this.Entity).then(function (data) {
+                    Loading.close();
+                    _this.Entity.Producto = data;
+                });
+            },
             CalculoMontoTotalFn: function () {
                 var total = ((this.Entity.Impuesto / 100) * this.Entity.Monto) + this.Entity.Monto;
                 return total;
@@ -20,8 +29,12 @@ var PedidoEdit;
                     return App.AxiosProvider.PedidoActualizar(entity);
                 }
             },
-            xxx: function () {
-                console.log("xxx");
+            consultarPrecioUnitario: function () {
+                Loading.fire("Cargando..");
+                App.AxiosProvider.PedidoChangeProducto(this.Entity).then(function (data) {
+                    Loading.close();
+                    console.log(data);
+                });
             },
             Save: function () {
                 if (BValidateData(this.Formulario)) {

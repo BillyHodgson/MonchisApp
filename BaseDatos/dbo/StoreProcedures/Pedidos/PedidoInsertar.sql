@@ -3,7 +3,6 @@
 	@FechaPedido Date,
 	@IdProducto INT,
 	@Cantidad INT,
-	@PrecioUnitario DECIMAL (18,2),
 	@SubTotal DECIMAL (18,2),
 	@Envio DECIMAL (18,2),
 	@Impuesto DECIMAL (18,2),
@@ -24,7 +23,6 @@ SET NOCOUNT ON
 	    , FechaPedido 
 	    , IdProducto
 		, Cantidad
-		, PrecioUnitario
 		, Envio
 		, SubTotal
 		, Impuesto
@@ -37,7 +35,6 @@ SET NOCOUNT ON
 	    , @FechaPedido 
 	    , @IdProducto
 		, @Cantidad
-		, @PrecioUnitario
 		, @Envio
 		, @SubTotal
 		, @Impuesto
