@@ -42,6 +42,8 @@ SET NOCOUNT ON
 		, @Estado
 		)
 
+		Update Productos set Cantidad=Cantidad - @Cantidad where IdProducto=@IdProducto
+
 
 		COMMIT TRANSACTION TRASA
 		
