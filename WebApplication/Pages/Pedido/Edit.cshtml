@@ -35,9 +35,9 @@
 
                 <div class="form-group mb-3">
                     <label for="Entity.IdProducto" class="form-label">Producto</label>
-
                     <select asp-for="Entity.IdProducto" class="form-select" v-model="Entity.IdProducto"
                             asp-items="@(new SelectList(Model.ProductoLista,"IdProducto","Nombre"))"
+                            v-onchange ="consultarPrecioUnitario()"
                             required>
                         <option value=""></option>
                     </select>
@@ -97,7 +97,5 @@
 </div>
 
 @section Scripts{
-
-
     <script defer src="~/App/Pedido/Edit.js"></script>
 }

@@ -23,6 +23,9 @@
                     return App.AxiosProvider.PedidoActualizar(entity);
                 }
             },
+            xxx() {
+                console.log("xxx")
+            },
             Save() {
 
                 if (BValidateData(this.Formulario)) {

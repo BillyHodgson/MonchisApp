@@ -20,6 +20,9 @@ var PedidoEdit;
                     return App.AxiosProvider.PedidoActualizar(entity);
                 }
             },
+            xxx: function () {
+                console.log("xxx");
+            },
             Save: function () {
                 if (BValidateData(this.Formulario)) {
                     Loading.fire("Guardando");

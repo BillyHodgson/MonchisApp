@@ -9,7 +9,7 @@ AS
 	 IdCliente,
 	 Cedula,
 	 NombreCompleto,
-	 FechaNacimiento
+	 FechaNacimiento,
 	 Telefono,
 	 Estado
 
@@ -17,7 +17,4 @@ AS
 	 WHERE
 
 	 (@IdCliente IS NULL OR IdCliente=@IdCliente)
-
-
-
 	end
