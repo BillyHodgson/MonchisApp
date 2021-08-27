@@ -19,7 +19,8 @@ AS BEGIN
 		,	CD.NombreCatalogoDistrito
 
 		,   MV.IdPedido
-		,   A.IdCamion			
+		,   A.IdCamion
+		,   A.Caracteristicas
 
 	FROM dbo.Entrega V
 	INNER JOIN dbo.CatalogoProvincia CP

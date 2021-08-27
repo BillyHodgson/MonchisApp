@@ -59,11 +59,8 @@ namespace WBL
             }
             catch (Exception)
             {
-
                 throw;
             }
-
-
         }
 
         public async Task<DBEntity> Create(CamionEntity entity)

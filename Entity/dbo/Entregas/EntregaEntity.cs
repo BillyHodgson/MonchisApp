@@ -18,7 +18,7 @@ namespace Entity
         }
 
         public int? IdEntrega { get; set; }
-        public DateTime FechaEntrega { get; set; }
+        public DateTime FechaEntrega { get; set; } = DateTime.Now;
         public int? IdCatalogoProvincia { get; set; }
         public CatalogoProvinciaEntity Provincia { get; set; }
         public int? IdCatalogoCanton { get; set; }

@@ -42,10 +42,10 @@ namespace WBL
             }
             catch (Exception)
             {
-
                 throw;
             }
         }
+
         public async Task<EntregaEntity> GetById(EntregaEntity entity)
         {
             try
@@ -59,11 +59,8 @@ namespace WBL
             }
             catch (Exception)
             {
-
                 throw;
             }
-
-
         }
 
 

@@ -31,37 +31,39 @@
                     </select>
                 </div>
 
-                <div class="form-group mb-3">
-                    <label for="Entity.IdCatalogoProvincia" class="form-label">Provincia</label>
+                <label class="form-label">Destino :</label>
+                <div class="ps-5">
+                    <div class="form-group mb-3">
+                        <label for="Entity.IdCatalogoProvincia" class="form-label">Provincia</label>
 
-                    <select asp-for="Entity.IdCatalogoProvincia" class="form-select" v-model="Entity.IdCatalogoProvincia"
-                            asp-items="@(new SelectList(Model.ProvinciaLista,"IdCatalogoProvincia","NombreCatalogoProvincia"))"
-                            v-on:change="OnChangeProvincia"
-                            required>
-                        <option value=""></option>
-                    </select>
+                        <select asp-for="Entity.IdCatalogoProvincia" class="form-select" v-model="Entity.IdCatalogoProvincia"
+                                asp-items="@(new SelectList(Model.ProvinciaLista,"IdCatalogoProvincia","NombreCatalogoProvincia"))"
+                                v-on:change="OnChangeProvincia"
+                                required>
+                            <option value=""></option>
+                        </select>
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <label for="Entity.IdCatalogoProvincia" class="form-label">Canton</label>
+
+                        <select asp-for="Entity.IdCatalogoCanton" class="form-select" v-model="Entity.IdCatalogoCanton"
+                                v-on:change="OnChangeCanton" required>
+                            <option v-for="item in CantonLista" :value="item.IdCatalogoCanton"> {{item.NombreCatalogoCanton}}</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <label for="Entity.IdCatalogoProvincia" class="form-label">Distrito</label>
+
+                        <select asp-for="Entity.IdCatalogoDistrito" v-model="Entity.IdCatalogoDistrito" class="form-select" required>
+                            <option v-for="item in DistritoLista" :value="item.IdCatalogoDistrito"> {{item.NombreCatalogoDistrito}}</option>
+                        </select>
+                    </div>
                 </div>
 
                 <div class="form-group mb-3">
-                    <label for="Entity.IdCatalogoProvincia" class="form-label">Canton</label>
-
-                    <select asp-for="Entity.IdCatalogoCanton" class="form-select" v-model="Entity.IdCatalogoCanton"
-                            v-on:change="OnChangeCanton" required>
-                        <option v-for="item in CantonLista" :value="item.IdCatalogoCanton"> {{item.NombreCatalogoCanton}}</option>
-                    </select>
-                </div>
-
-                <div class="form-group mb-3">
-                    <label for="Entity.IdCatalogoProvincia" class="form-label">Distrito</label>
-
-                    <select asp-for="Entity.IdCatalogoDistrito" v-model="Entity.IdCatalogoDistrito" class="form-select" required>
-                        <option v-for="item in DistritoLista" :value="item.IdCatalogoDistrito"> {{item.NombreCatalogoDistrito}}</option>
-                    </select>
-                </div>
-
-
-                <div class="form-group mb-3">
-                    <label for="Entity.IdCamion" class="form-label">Camion</label>
+                    <label for="Entity.IdCamion" class="form-label">Camion <small class="ms-5">(Sólo se muestran los camiones activos disponibles en la fecha seleccionada)</small></label>
 
                     <select asp-for="Entity.IdCamion" class="form-select" v-model="Entity.IdCamion"
                             asp-items="@(new SelectList(Model.CamionLista,"IdCamion","Caracteristicas"))"

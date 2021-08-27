@@ -1,18 +1,54 @@
 ﻿CREATE PROCEDURE [dbo].[CamionLista]
-AS
-	BEGIN
+	@FechaEntrega DATE=NULL
+
+AS BEGIN
 		SET NOCOUNT ON
 
-
-
-		SELECT 
-		IdCamion,
-		Caracteristicas
-
+		SELECT
+		C.IdCamion,
+		C.Caracteristicas
 		FROM	
-			dbo.Camion
+			dbo.Camion C
+		WHERE
+			C.Estado=1
 
-			WHERE
-					Estado=1
+		EXCEPT
+
+		SELECT
+		C.IdCamion,
+		C.Caracteristicas
+		FROM
+			dbo.Entrega E
+			INNER JOIN dbo.Camion C
+				 ON E.IdCamion = C.IdCamion
+			WHERE E.FechaEntrega = @FechaEntrega
 
 	END
+
+
+
+	
+
+
+
+
+
+
+--DECLARE @FechaEntrega DATE=NULL
+
+--SELECT
+--C.IdCamion,
+--C.Caracteristicas
+--FROM	
+--	dbo.Camion C
+
+--EXCEPT
+
+--SELECT
+--C.IdCamion,
+--C.Caracteristicas
+--FROM
+--	dbo.Entrega E
+--	INNER JOIN dbo.Camion C
+--         ON E.IdCamion = C.IdCamion
+--	WHERE E.FechaEntrega != @FechaEntrega
