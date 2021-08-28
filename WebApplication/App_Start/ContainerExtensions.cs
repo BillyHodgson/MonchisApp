@@ -21,6 +21,7 @@ namespace WebApplication
             services.AddTransient<ICatalogoCantonService, CatalogoCantonService>();
             services.AddTransient<ICatalogoDistritoService, CatalogoDistritoService>();
             services.AddTransient<ICamionService, CamionService>();
+            services.AddTransient<IUsuariosService, UsuariosService>();
             return services;
         }
     }

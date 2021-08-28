@@ -69,6 +69,8 @@
     <Folder Include="dbo\StoreProcedures\Productos" />
     <Folder Include="dbo\StoreProcedures\Entregas\Conductor" />
     <Folder Include="dbo\StoreProcedures\Entregas\Camion" />
+    <Folder Include="dbo\Login" />
+    <Folder Include="dbo\Tables\Usuarios" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Tables\Pedidos\Pedido.sql" />
@@ -118,5 +120,7 @@
     <Build Include="dbo\StoreProcedures\Entregas\CatalogoCantonLista.sql" />
     <Build Include="dbo\StoreProcedures\Entregas\CatalogoDistritoLista.sql" />
     <Build Include="dbo\StoreProcedures\Entregas\CatalogoProvinciaLista.sql" />
+    <Build Include="dbo\Login\Login.sql" />
+    <Build Include="dbo\Tables\Usuarios\Usuarios.sql" />
   </ItemGroup>
 </Project>

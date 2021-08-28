@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Entity;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using System;
 using System.Collections.Generic;
@@ -25,18 +26,18 @@ namespace WebApplication
                 JsonSerializer.Deserialize<T>(value);
         }
 
-        //public static bool SessionOnline(this PageModel ct)
-        //{
-        //    var Session = ct.HttpContext.Session.Get<UsuariosEntity>(IApp.UsuarioSession);
-        //    if (Session == null)
-        //    {
-        //        return false;
-        //    }
-        //    else
-        //    {
-        //        return true;
-        //    }
+        public static bool SessionOnline(this PageModel ct)
+        {
+            var Session = ct.HttpContext.Session.Get<UsuariosEntity>(IApp.UsuarioSession);
+            if (Session == null)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
 
-        //}
+        }
     }
 }

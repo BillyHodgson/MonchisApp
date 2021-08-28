@@ -23,6 +23,7 @@ namespace WebApiRest
             services.AddTransient<IEntregaService, EntregaService>();
             services.AddTransient<ICamionService, CamionService>();
             services.AddTransient<IConductorService, ConductorService>();
+            services.AddTransient<IUsuariosService, UsuariosService>();
 
 
             return services;
