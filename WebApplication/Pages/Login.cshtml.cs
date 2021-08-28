@@ -16,37 +16,37 @@ namespace WebApplication.Pages
             this.serviceApi = serviceApi;
         }
 
-        //[FromBody]
-        //[BindProperty]
+        [FromBody]
+        [BindProperty]
 
-        ////public UsuariosEntity Entity { get; set; } = new UsuariosEntity();
+        public UsuariosEntity Entity { get; set; } = new UsuariosEntity();
 
 
-        //public async Task<IActionResult> OnPost()
-        //{
+        public async Task<IActionResult> OnPost()
+        {
 
-        //    try
-        //    {
-        //        var result = await serviceApi.UsuarioLogin(Entity);
-        //        if (result.CodeError == 0)
-        //        {
-        //            HttpContext.Session.Set<UsuariosEntity>(IApp.UsuarioSession, result);
-        //            return new JsonResult(result);
-        //        }
-        //        else
-        //        {
-        //            return new JsonResult(result);
-        //        }
+            try
+            {
+                var result = await serviceApi.UsuarioLogin(Entity);
+                if (result.CodeError == 0)
+                {
+                    HttpContext.Session.Set<UsuariosEntity>(IApp.UsuarioSession, result);
+                    return new JsonResult(result);
+                }
+                else
+                {
+                    return new JsonResult(result);
+                }
 
-        //    }
+            }
 
-        //    catch (Exception ex)
-        //    {
+            catch (Exception ex)
+            {
 
-        //        return new JsonResult(new DBEntity { CodeError = ex.HResult, MsgError = ex.Message });
-        //    }
+                return new JsonResult(new DBEntity { CodeError = ex.HResult, MsgError = ex.Message });
+            }
 
-        //}
+        }
 
         public IActionResult OnGetLogout()
         {

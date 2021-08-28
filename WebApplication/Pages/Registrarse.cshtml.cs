@@ -9,7 +9,8 @@ namespace WebApplication.Pages
 {
     public class RegistrarseModel : PageModel
     {
-        //public UsuariosEntity Entity { get; set; } = new UsuariosEntity();
+        
+        public UsuariosEntity Entity { get; set; } = new UsuariosEntity();
 
         public void OnGet()
         {

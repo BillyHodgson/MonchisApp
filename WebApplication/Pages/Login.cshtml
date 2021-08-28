@@ -19,9 +19,8 @@
 <body>
     <div class="main-wrapper">
 
-        @*<div id="AppLogin" data-entity="@JsonSerializer.Serialize(Model.Entity)" class="auth-wrapper d-flex no-block justify-content-center align-items-center" style="background:url(../assets/images/background/login-register.jpg) no-repeat center center; background-size: cover;">*@
-        <div id="AppLogin" class="auth-wrapper d-flex vh-100 no-block justify-content-center align-items-center">
-            <div class="auth-box p-4 bg-white rounded">
+        <div id="AppLogin" data-entity="@JsonSerializer.Serialize(Model.Entity)" class="auth-wrapper d-flex vh-100 no-block justify-content-center align-items-center"  style="padding-bottom : 25%">
+            <div class="auth-box p-4  rounded">
                 <div id="loginform">
                     <div class="logo">
                         <h3 class="box-title mb-3">Iniciar Sesion</h3>
@@ -32,14 +31,12 @@
                             <form class="form-horizontal mt-3 form-material" id="LoginForm">
                                 <div class="form-group mb-3">
                                     <div class="">
-                                        @*<input asp-for="Entity.Usuario" v-model="Entity.Usuario" class="form-control" type="text" required placeholder="Usuario">*@
-                                        <input v-model="Entity.Usuario" class="form-control" type="text" required placeholder="Usuario">
+                                        <input asp-for="Entity.Usuario" v-model="Entity.Usuario" class="form-control" type="text" required placeholder="Usuario">
                                     </div>
                                 </div>
                                 <div class="form-group mb-4">
                                     <div class="">
-                                        @*<input asp-for="Entity.Contrasena" v-model="Entity.Contrasena" class="form-control" type="password" required placeholder="Contraseña">*@
-                                        <input v-model="Entity.Contrasena" class="form-control" type="password" required placeholder="Contraseña">
+                                        <input asp-for="Entity.Contrasena" v-model="Entity.Contrasena" class="form-control" type="password" required placeholder="Contraseña">
                                     </div>
                                 </div>
 

@@ -17,9 +17,9 @@
 <body>
     <div class="main-wrapper">
  
-        @*<div id="AppRegistrar" data-entity="@JsonSerializer.Serialize(Model.Entity)" class="auth-wrapper d-flex no-block justify-content-center align-items-center">*@
-            <div id="AppRegistrar" class="auth-wrapper d-flex no-block justify-content-center align-items-center">
-                <div class="auth-box p-4 bg-white rounded">
+    
+            <div id="AppRegistrar" data-entity="@JsonSerializer.Serialize(Model.Entity)" class="auth-wrapper d-flex vh-100  no-block justify-content-center align-items-center" style="padding-bottom : 25%">
+                <div class="auth-box p-4 rounded">
                     <div>
                         <div class="logo text-center">
                             <h5 class="font-weight-medium mb-3 mt-1">Registrarse</h5>
@@ -29,22 +29,22 @@
                             <div class="col-12">
                                 <form id="FromRegistrarse" class="form-horizontal">
                                     <div class="form-group form-floating mb-3">
-                                        @*<input asp-for="Entity.Usuario" v-model="Entity.Usuario" type="text" class="form-control form-input-bg" required>*@
-                                        <input v-model="Entity.Usuario" type="text" class="form-control form-input-bg" required>
+                                        <input asp-for="Entity.Usuario" v-model="Entity.Usuario" type="text" class="form-control form-input-bg" required>
+                                        
 
                                         <label for="tb-rfname">Usuario</label>
 
                                     </div>
                                     <div class="form-group form-floating mb-3">
-                                        @*  <input asp-for="Entity.Nombre" v-model="Entity.Nombre" type="text" class="form-control form-input-bg" required>*@
-                                        <input v-model="Entity.Nombre" type="text" class="form-control form-input-bg" required>
+                                      <input asp-for="Entity.Nombre" v-model="Entity.Nombre" type="text" class="form-control form-input-bg" required>
+                                    
 
                                         <label for="tb-remail">Nombre</label>
 
                                     </div>
                                     <div class="form-group form-floating mb-3">
-                                        @*   <input asp-for="Entity.Contrasena" v-model="Entity.Contrasena" type="password" class="form-control form-input-bg" required>*@
-                                        <input v-model="Entity.Contrasena" type="password" class="form-control form-input-bg" required>
+                                        <input asp-for="Entity.Contrasena" v-model="Entity.Contrasena" type="password" class="form-control form-input-bg" required>
+
 
                                         <label for="text-rpassword">Contrasena</label>
 
@@ -66,12 +66,8 @@
                     </div>
                 </div>
             </div>
-            <!-- -------------------------------------------------------------- -->
-            <!-- Login box.scss -->
-            <!-- -------------------------------------------------------------- -->
+
         </div>
-    <!-- -------------------------------------------------------------- -->
-    <!-- All Required js -->
     @await Html.PartialAsync("_ScriptsPartial")
 
     <script defer src="~/App/Registrarse.js"></script>
