@@ -1,4 +1,8 @@
-﻿<!DOCTYPE html>
+﻿@inject Microsoft.AspNetCore.Http.IHttpContextAccessor Context;
+@{ var UsuarioSession = Context.HttpContext.Session.Get<Entity.UsuariosEntity>(IApp.UsuarioSession); }
+
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -32,16 +36,17 @@
                         <a class="nav-link" asp-page="/Entrega/Grid">Entregas</a>
                     </li>
                 </ul>
-                <div class="d-flex">
-                    <div class="dropdown dropstart">
-                        <a class="nav-link dropdown-toggle text-white" href="#" id="navbarLoginUser" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            User
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarLoginUser">
-                            <li><a class="dropdown-item" href="#">Cerrar Sesión</a></li>
-                        </ul>
-                    </div>
+            <div class="d-flex">
+                <div class="dropdown dropstart">
+                    <a class="nav-link dropdown-toggle text-white" href="#" id="navbarLoginUser" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        @UsuarioSession?.Nombre
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarLoginUser">
+                        <li><a class="dropdown-item" href="#">Cerrar Sesión</a></li>
+                    </ul>
                 </div>
+            </div>
+        
             </div>
         </div>
     </nav>

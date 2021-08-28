@@ -23,6 +23,8 @@ namespace WebApplication.Pages.Productos
         {
             try
             {
+                if (!this.SessionOnline()) return RedirectToPage("../Login");
+
                 GridList = await service.ProductosGet();
                 return Page();
             }

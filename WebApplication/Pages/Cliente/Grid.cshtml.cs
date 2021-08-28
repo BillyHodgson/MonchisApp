@@ -22,9 +22,9 @@ namespace WebApplication.Pages.Cliente
         {
             try
             {
-                
-                GridList = await service.ClienteGet();
+                if (!this.SessionOnline()) return RedirectToPage("../Login");
 
+                GridList = await service.ClienteGet();
                 return Page();
             }
             catch (Exception ex)

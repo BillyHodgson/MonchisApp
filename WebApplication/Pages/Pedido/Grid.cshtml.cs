@@ -22,6 +22,8 @@ namespace WebApplication.Pages.Pedido
 
             try
             {
+                if (!this.SessionOnline()) return RedirectToPage("../Login");
+
                 GridList = await service.PedidoGet();
 
                 return Page();
