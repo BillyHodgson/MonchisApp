@@ -1,0 +1,72 @@
+﻿@page
+@model WebApplication.Pages.LoginModel
+@{ }
+<!DOCTYPE html>
+<html dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex,nofollow">
+    <title>Login</title>
+
+
+    @await Html.PartialAsync("_HeaderPartial")
+
+</head>
+
+<body>
+    <div class="main-wrapper">
+
+        @*<div id="AppLogin" data-entity="@JsonSerializer.Serialize(Model.Entity)" class="auth-wrapper d-flex no-block justify-content-center align-items-center" style="background:url(../assets/images/background/login-register.jpg) no-repeat center center; background-size: cover;">*@
+        <div id="AppLogin" class="auth-wrapper d-flex vh-100 no-block justify-content-center align-items-center">
+            <div class="auth-box p-4 bg-white rounded">
+                <div id="loginform">
+                    <div class="logo">
+                        <h3 class="box-title mb-3">Iniciar Sesion</h3>
+                    </div>
+                    <!-- Form -->
+                    <div class="row">
+                        <div class="col-12">
+                            <form class="form-horizontal mt-3 form-material" id="LoginForm">
+                                <div class="form-group mb-3">
+                                    <div class="">
+                                        @*<input asp-for="Entity.Usuario" v-model="Entity.Usuario" class="form-control" type="text" required placeholder="Usuario">*@
+                                        <input v-model="Entity.Usuario" class="form-control" type="text" required placeholder="Usuario">
+                                    </div>
+                                </div>
+                                <div class="form-group mb-4">
+                                    <div class="">
+                                        @*<input asp-for="Entity.Contrasena" v-model="Entity.Contrasena" class="form-control" type="password" required placeholder="Contraseña">*@
+                                        <input v-model="Entity.Contrasena" class="form-control" type="password" required placeholder="Contraseña">
+                                    </div>
+                                </div>
+
+                                <div class="form-group text-center mt-4 mb-3">
+                                    <div class="col-xs-12">
+                                        <button @@click="Login" class="btn d-block w-100" type="button" style="background-color: #4B505E; color:white">Login</button>
+                                    </div>
+                                </div>
+
+                                <div class="form-group mb-0 mt-4">
+                                    <div class="col-sm-12 justify-content-center d-flex">
+                                        <p>No tienes Cuenta? <a asp-page="Registrarse" class=" font-weight-medium ms-1">Registrarse</a></p>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    @await Html.PartialAsync("_ScriptsPartial")
+
+    <script defer src="~/App/Login.js"></script>
+</body>
+
+</html>

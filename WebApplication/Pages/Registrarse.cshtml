@@ -1,0 +1,81 @@
+﻿@page
+@model WebApplication.Pages.RegistrarseModel
+@{
+}
+<!DOCTYPE html>
+<html dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Material Pro Template by WrapPixel</title>
+    @await Html.PartialAsync("_HeaderPartial")
+</head>
+
+<body>
+    <div class="main-wrapper">
+ 
+        @*<div id="AppRegistrar" data-entity="@JsonSerializer.Serialize(Model.Entity)" class="auth-wrapper d-flex no-block justify-content-center align-items-center">*@
+            <div id="AppRegistrar" class="auth-wrapper d-flex no-block justify-content-center align-items-center">
+                <div class="auth-box p-4 bg-white rounded">
+                    <div>
+                        <div class="logo text-center">
+                            <h5 class="font-weight-medium mb-3 mt-1">Registrarse</h5>
+                        </div>
+                        <!-- Form -->
+                        <div class="row mt-4">
+                            <div class="col-12">
+                                <form id="FromRegistrarse" class="form-horizontal">
+                                    <div class="form-group form-floating mb-3">
+                                        @*<input asp-for="Entity.Usuario" v-model="Entity.Usuario" type="text" class="form-control form-input-bg" required>*@
+                                        <input v-model="Entity.Usuario" type="text" class="form-control form-input-bg" required>
+
+                                        <label for="tb-rfname">Usuario</label>
+
+                                    </div>
+                                    <div class="form-group form-floating mb-3">
+                                        @*  <input asp-for="Entity.Nombre" v-model="Entity.Nombre" type="text" class="form-control form-input-bg" required>*@
+                                        <input v-model="Entity.Nombre" type="text" class="form-control form-input-bg" required>
+
+                                        <label for="tb-remail">Nombre</label>
+
+                                    </div>
+                                    <div class="form-group form-floating mb-3">
+                                        @*   <input asp-for="Entity.Contrasena" v-model="Entity.Contrasena" type="password" class="form-control form-input-bg" required>*@
+                                        <input v-model="Entity.Contrasena" type="password" class="form-control form-input-bg" required>
+
+                                        <label for="text-rpassword">Contrasena</label>
+
+                                    </div>
+                                    <div class="form-group form-floating mb-3">
+                                        <input id="ConfirmarContrasena" name="ConfirmarContrasena" type="password" class="form-control form-input-bg"
+                                               data-bv-identical="true" data-bv-identical-field="Entity.Contrasena" data-bv-identical-message="Las Contraseñas no coinciden"
+                                               required>
+                                        <label for="text-rcpassword">Confirm Password</label>
+
+                                    </div>
+
+                                    <div class="d-flex align-items-stretch">
+                                        <button @@click="Save" type="button" class="btn d-block w-100" style="background-color: #4B505E; color:white">Sign up</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- -------------------------------------------------------------- -->
+            <!-- Login box.scss -->
+            <!-- -------------------------------------------------------------- -->
+        </div>
+    <!-- -------------------------------------------------------------- -->
+    <!-- All Required js -->
+    @await Html.PartialAsync("_ScriptsPartial")
+
+    <script defer src="~/App/Registrarse.js"></script>
+
+</body>
+
+</html>
