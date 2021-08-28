@@ -1,6 +1,7 @@
 ﻿using Entity;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
@@ -156,9 +157,9 @@ namespace WebApplication
             return result;
         }
 
-        public async Task<IEnumerable<CamionEntity>> CamionGetLista()
+        public async Task<IEnumerable<CamionEntity>> CamionGetLista(DateTime fecha)
         {
-            var result = await client.ServicioGetAsync<IEnumerable<CamionEntity>>("api/Camion/Lista");
+            var result = await client.ServicioGetAsync<IEnumerable<CamionEntity>>("api/Camion/Lista/" + fecha.ToString("yyyy-MM-dd"));
             return result;
         }
 

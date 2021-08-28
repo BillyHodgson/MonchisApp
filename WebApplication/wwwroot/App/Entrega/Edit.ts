@@ -9,6 +9,7 @@
             Entity: Entity,
             CantonLista: [],
             DistritoLista: [],
+            CamionLista: [],
         },
 
         methods: {
@@ -21,6 +22,13 @@
                 } else {
                     return App.AxiosProvider.EntregaActualizar(entity);
                 }
+            },
+
+            OnChangeFechaEntrega() {
+                App.AxiosProvider.CamionLista(this.Entity).then(data => {
+                    Loading.close();
+                    this.CamionLista = data;
+                });
             },
 
             OnChangeProvincia() {
@@ -84,6 +92,7 @@
         created() {
             this.OnChangeProvincia();
             this.OnChangeCanton();
+            this.OnChangeFechaEntrega();
         }
 
 

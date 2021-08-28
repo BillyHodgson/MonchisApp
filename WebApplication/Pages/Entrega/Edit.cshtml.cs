@@ -52,7 +52,7 @@ namespace WebApplication.Pages.Entregas
 
                 ProvinciaLista = await catalogoProvinciaService.GetLista();
                 PedidoLista = await service.PedidoGetLista();
-                CamionLista = await service.CamionGetLista();
+                CamionLista = await service.CamionGetLista(Entity.FechaEntrega);
 
                 return Page();
             }
@@ -98,6 +98,12 @@ namespace WebApplication.Pages.Entregas
                 return new JsonResult(new DBEntity { CodeError = ex.HResult, MsgError = ex.Message });
             }
 
+        }
+
+        public async Task<IActionResult> OnPostGetListaCamiones()
+        {
+            var result = await service.CamionGetLista(Entity.FechaEntrega);
+            return new JsonResult(result);
         }
     }
 }

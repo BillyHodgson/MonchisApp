@@ -23,6 +23,7 @@ namespace App.AxiosProvider   {
     export const EntregaActualizar = (entity) => ServiceApi.put<DBEntity>("api/Entrega", entity).then(({ data }) => data);
     export const EntregaChangeProvincia = (entity) => axios.post<any[]>("Entrega/Edit?handler=ChangeProvincia", entity).then(({ data }) => data);
     export const EntregaChangeCanton = (entity) => axios.post<any[]>("Entrega/Edit?handler=ChangeCanton", entity).then(({ data }) => data);
+    export const CamionLista = (entity) => axios.post<any[]>("Entrega/Edit?handler=GetListaCamiones", entity).then(({ data }) => data);
 
     export const CamionEliminar = (id) => ServiceApi.delete<DBEntity>("api/Camion/" + id).then(({ data }) => data);
     export const CamionGuardar = (entity) => ServiceApi.post<DBEntity>("api/Camion", entity).then(({ data }) => data);

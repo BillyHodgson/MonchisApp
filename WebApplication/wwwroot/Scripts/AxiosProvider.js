@@ -75,6 +75,10 @@ var App;
             var data = _a.data;
             return data;
         }); };
+        AxiosProvider.CamionLista = function (entity) { return axios.post("Entrega/Edit?handler=GetListaCamiones", entity).then(function (_a) {
+            var data = _a.data;
+            return data;
+        }); };
         AxiosProvider.CamionEliminar = function (id) { return ServiceApi.delete("api/Camion/" + id).then(function (_a) {
             var data = _a.data;
             return data;

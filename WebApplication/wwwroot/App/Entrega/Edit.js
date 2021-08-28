@@ -8,6 +8,7 @@ var EntregaEdit;
             Entity: Entity,
             CantonLista: [],
             DistritoLista: [],
+            CamionLista: [],
         },
         methods: {
             EntregaServicio: function (entity) {
@@ -18,6 +19,13 @@ var EntregaEdit;
                 else {
                     return App.AxiosProvider.EntregaActualizar(entity);
                 }
+            },
+            OnChangeFechaEntrega: function () {
+                var _this = this;
+                App.AxiosProvider.CamionLista(this.Entity).then(function (data) {
+                    Loading.close();
+                    _this.CamionLista = data;
+                });
             },
             OnChangeProvincia: function () {
                 var _this = this;
@@ -60,6 +68,7 @@ var EntregaEdit;
         created: function () {
             this.OnChangeProvincia();
             this.OnChangeCanton();
+            this.OnChangeFechaEntrega();
         }
     });
     Formulario.$mount("#AppEdit");

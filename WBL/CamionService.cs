@@ -14,6 +14,7 @@ namespace WBL
         Task<DBEntity> Delete(CamionEntity entity);
         Task<IEnumerable<CamionEntity>> Get();
         Task<CamionEntity> GetById(CamionEntity entity);
+        Task<IEnumerable<CamionEntity>> GetLista(EntregaEntity entity);
         Task<DBEntity> Update(CamionEntity entity);
     }
 
@@ -25,7 +26,6 @@ namespace WBL
         {
             sql = _sql;
         }
-
 
         public async Task<IEnumerable<CamionEntity>> Get()
         {
@@ -41,9 +41,21 @@ namespace WBL
 
                 throw;
             }
+        }
 
+        public async Task<IEnumerable<CamionEntity>> GetLista(EntregaEntity entity)
+        {
+            try
+            {
+                var result = sql.QueryAsync<CamionEntity>("CamionLista", new { entity.FechaEntrega });
+                return await result;
 
+            }
+            catch (Exception)
+            {
 
+                throw;
+            }
         }
 
         public async Task<CamionEntity> GetById(CamionEntity entity)

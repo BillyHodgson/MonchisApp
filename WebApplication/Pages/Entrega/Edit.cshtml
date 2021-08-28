@@ -16,7 +16,7 @@
                 <div class="form-group mb-3">
                     <label for="Entity.FechaEntrega" class="form-label">Fecha Entrega</label>
 
-                    <b-form-datepicker id="FechaEntrega" name="FechaEntrega" class="form-control" v-model="Entity.FechaEntrega" required>
+                    <b-form-datepicker id="FechaEntrega" name="FechaEntrega" class="form-control" v-model="Entity.FechaEntrega" v-on:input="OnChangeFechaEntrega" required>
 
                     </b-form-datepicker>
                 </div>
@@ -65,10 +65,8 @@
                 <div class="form-group mb-3">
                     <label for="Entity.IdCamion" class="form-label">Camion <small class="ms-5">(Sólo se muestran los camiones activos disponibles en la fecha seleccionada)</small></label>
 
-                    <select asp-for="Entity.IdCamion" class="form-select" v-model="Entity.IdCamion"
-                            asp-items="@(new SelectList(Model.CamionLista,"IdCamion","Caracteristicas"))"
-                            required>
-                        <option value=""></option>
+                    <select asp-for="Entity.IdCamion" v-model="Entity.IdCamion" class="form-select" required>
+                        <option v-for="item in CamionLista" :value="item.IdCamion"> {{item.Caracteristicas}}</option>
                     </select>
                 </div>
 

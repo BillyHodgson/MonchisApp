@@ -9,7 +9,6 @@ var CategoriaEdit;
         },
         methods: {
             Servicio: function (entity) {
-                console.log(entity);
                 if (entity.IdCategoria == null) {
                     return App.AxiosProvider.CategoriaGuardar(entity);
                 }

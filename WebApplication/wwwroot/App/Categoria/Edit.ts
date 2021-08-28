@@ -7,7 +7,6 @@
         },
         methods: {
             Servicio(entity) {
-                console.log(entity)
                 if (entity.IdCategoria == null) {
                     return App.AxiosProvider.CategoriaGuardar(entity);
                 } else {

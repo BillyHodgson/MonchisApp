@@ -1,5 +1,5 @@
 ﻿CREATE PROCEDURE [dbo].[CamionLista]
-	@FechaEntrega DATE=NULL
+	@FechaEntrega DATE
 
 AS BEGIN
 		SET NOCOUNT ON
@@ -32,23 +32,3 @@ AS BEGIN
 
 
 
-
-
---DECLARE @FechaEntrega DATE=NULL
-
---SELECT
---C.IdCamion,
---C.Caracteristicas
---FROM	
---	dbo.Camion C
-
---EXCEPT
-
---SELECT
---C.IdCamion,
---C.Caracteristicas
---FROM
---	dbo.Entrega E
---	INNER JOIN dbo.Camion C
---         ON E.IdCamion = C.IdCamion
---	WHERE E.FechaEntrega != @FechaEntrega
