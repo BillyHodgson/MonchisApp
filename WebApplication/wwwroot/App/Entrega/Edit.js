@@ -23,6 +23,7 @@ var EntregaEdit;
             OnChangeFechaEntrega: function () {
                 var _this = this;
                 App.AxiosProvider.CamionLista(this.Entity).then(function (data) {
+                    console.log(data);
                     Loading.close();
                     _this.CamionLista = data;
                 });

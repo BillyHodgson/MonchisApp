@@ -157,12 +157,6 @@ namespace WebApplication
             return result;
         }
 
-        public async Task<IEnumerable<CamionEntity>> CamionGetLista(DateTime fecha)
-        {
-            var result = await client.ServicioGetAsync<IEnumerable<CamionEntity>>("api/Camion/Lista/" + fecha.ToString("yyyy-MM-dd"));
-            return result;
-        }
-
         public async Task<CamionEntity> CamionGetById(int id)
         {
             var result = await client.ServicioGetAsync<CamionEntity>("api/Camion/" + id);

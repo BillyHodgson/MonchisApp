@@ -34,19 +34,6 @@ namespace WebApiRest.Controllers
             }
         }
 
-        [HttpGet("Lista/{fecha}")]
-        public async Task<IEnumerable<CamionEntity>> GetLista(DateTime fecha)
-        {
-            try
-            {
-                return await camionService.GetLista(new EntregaEntity { FechaEntrega = fecha });
-            }
-            catch (Exception ex)
-            {
-                return new List<CamionEntity>();
-            }
-        }
-
         [HttpGet("{id}")]
         public async Task<CamionEntity> GetById(int id)
         {

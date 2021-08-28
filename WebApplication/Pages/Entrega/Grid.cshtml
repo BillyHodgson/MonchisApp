@@ -9,60 +9,61 @@
             Entregas
         </div>
         <div class="card-body">
+            <div class="mb-2">
+                <a class="btn btn-outline-primary" asp-page="Edit">
+                    Nueva Entrega
+                    <i class='bx bx-add-to-queue'></i>
+                </a>
+                <a type="button" class="btn btn-outline-primary" asp-page="/Camion/Grid">Gestionar Camion</a>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <table id="GridView" class="table table-bordered table-striped table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Id</th>
+                                    <th>Fecha Entrega</th>
+                                    <th>Pedido</th>
+                                    <th>Provincia</th>
+                                    <th>Canton</th>
+                                    <th>Distrito</th>
+                                    <th>Camion</th>
+                                    <th>Estado</th>
+                                    <th>Acción</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model.GridList)
+                                {
+                                    <tr>
+                                        <td>@item.IdEntrega</td>
+                                        <td>@item.FechaEntrega.ToString("dd/MM/yyyy")</td>
+                                        <td>@item.Pedido.IdPedido</td>
+                                        <td>@item.Provincia.NombreCatalogoProvincia</td>
+                                        <td>@item.Canton.NombreCatalogoCanton</td>
+                                        <td>@item.Distrito.NombreCatalogoDistrito</td>
+                                        <td>@item.Camion.Caracteristicas</td>
+                                        <td>@(item.Estado ? "Activo": "Inactivo")</td>
+                                        <td>
+                                            <a class="btn btn-outline-primary" asp-page="Edit" asp-route-id="@item.IdEntrega">
+                                                <i class='bx bxs-edit'></i>
+                                            </a>
 
-            <a class="btn btn-outline-primary" asp-page="Edit">
-                <i class='bx bx-add-to-queue'></i>
-            </a>
-            <a type="button" class="btn btn-outline-primary" asp-page="/Camion/Grid">Gestionar Camion</a>
+                                            <button type="button" class="btn btn-outline-primary"
+                                                    onclick="EntregaGrid.OnClickEliminar(@item.IdEntrega)">
+                                                <i class='bx bx-trash'></i>
+                                            </button>
+                                        </td>
+                                    </tr>
 
-            <div class="row">
-                <div class="col-12">
-                    <table id="GridView" class="table table-bordered table-striped table-hover">
-                        <thead>
-                            <tr>
-                                <th>Id</th>
-                                <th>Fecha Entrega</th>
-                                <th>Pedido</th>
-                                <th>Provincia</th>
-                                <th>Canton</th>
-                                <th>Distrito</th>
-                                <th>Camion</th>
-                                <th>Estado</th>
-                                <th>Acción</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach (var item in Model.GridList)
-                            {
-                            <tr>
-                                <td>@item.IdEntrega</td>
-                                <td>@item.FechaEntrega.ToString("dd/MM/yyyy")</td>
-                                <td>@item.Pedido.IdPedido</td>
-                                <td>@item.Provincia.NombreCatalogoProvincia</td>
-                                <td>@item.Canton.NombreCatalogoCanton</td>
-                                <td>@item.Distrito.NombreCatalogoDistrito</td>
-                                <td>@item.Camion.Caracteristicas</td>
-                                <td>@(item.Estado ? "Activo": "Inactivo")</td>
-                                <td>
-                                    <a class="btn btn-outline-primary" asp-page="Edit" asp-route-id="@item.IdEntrega">
-                                        <i class='bx bxs-edit'></i>
-                                    </a>
+                                }
 
-                                    <button type="button" class="btn btn-outline-primary"
-                                            onclick="EntregaGrid.OnClickEliminar(@item.IdEntrega)">
-                                        <i class='bx bx-trash'></i>
-                                    </button>
-                                </td>
-                            </tr>
-
-                            }
-
-                        </tbody>
-                    </table>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
 
 </div>

@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Entity;
+using System.Diagnostics;
 
 namespace WBL
 {
@@ -45,9 +46,13 @@ namespace WBL
 
         public async Task<IEnumerable<CamionEntity>> GetLista(EntregaEntity entity)
         {
+            Debug.WriteLine("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
+            Debug.WriteLine(entity.FechaEntrega.ToString("yyy-MM-dd"));
+            Debug.WriteLine(entity.IdCamion);
+            string FechaEntrega = entity.FechaEntrega.ToString("yyyy-MM-dd");
             try
             {
-                var result = sql.QueryAsync<CamionEntity>("CamionLista", new { entity.FechaEntrega });
+                var result = sql.QueryAsync<CamionEntity>("CamionLista", new { FechaEntrega , entity.IdCamion });
                 return await result;
 
             }

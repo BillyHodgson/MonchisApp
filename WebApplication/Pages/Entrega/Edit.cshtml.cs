@@ -17,14 +17,17 @@ namespace WebApplication.Pages.Entregas
         private readonly ICatalogoProvinciaService catalogoProvinciaService;
         private readonly ICatalogoCantonService catalogoCantonService;
         private readonly ICatalogoDistritoService catalogoDistritoService;
+        private readonly ICamionService camionService;
 
         public EditModel(ServiceApi service, ICatalogoProvinciaService catalogoProvinciaService,
-            ICatalogoCantonService catalogoCantonService, ICatalogoDistritoService catalogoDistritoService)
+            ICatalogoCantonService catalogoCantonService, ICatalogoDistritoService catalogoDistritoService
+            , ICamionService camionService)
         {
             this.service = service;
             this.catalogoProvinciaService = catalogoProvinciaService;
             this.catalogoCantonService = catalogoCantonService;
             this.catalogoDistritoService = catalogoDistritoService;
+            this.camionService = camionService;
         }
 
         [BindProperty(SupportsGet = true)]
@@ -52,7 +55,6 @@ namespace WebApplication.Pages.Entregas
 
                 ProvinciaLista = await catalogoProvinciaService.GetLista();
                 PedidoLista = await service.PedidoGetLista();
-                CamionLista = await service.CamionGetLista(Entity.FechaEntrega);
 
                 return Page();
             }
@@ -102,8 +104,20 @@ namespace WebApplication.Pages.Entregas
 
         public async Task<IActionResult> OnPostGetListaCamiones()
         {
-            var result = await service.CamionGetLista(Entity.FechaEntrega);
-            return new JsonResult(result);
+            Debug.WriteLine("============================44444444444");
+            Debug.WriteLine(Entity.FechaEntrega);
+            Debug.WriteLine(Entity.IdCamion);
+              try
+            {
+                var result = await camionService.GetLista(
+                          new EntregaEntity { FechaEntrega = Entity.FechaEntrega, IdCamion = Entity.IdCamion }
+                        );
+                return new JsonResult(result);
+            }
+            catch (Exception ex)
+            {
+                return new JsonResult(new DBEntity { CodeError = ex.HResult, MsgError = ex.Message });
+            }
         }
     }
 }

@@ -14,7 +14,6 @@
 
         methods: {
 
-
             EntregaServicio(entity) {
                 console.log(entity);
                 if (entity.IdEntrega == null) {
@@ -26,6 +25,7 @@
 
             OnChangeFechaEntrega() {
                 App.AxiosProvider.CamionLista(this.Entity).then(data => {
+                    console.log(data)
                     Loading.close();
                     this.CamionLista = data;
                 });
@@ -36,25 +36,18 @@
                 App.AxiosProvider.EntregaChangeProvincia(this.Entity).then(data => {
                     Loading.close();
                     this.CantonLista = data;
-
                 });
-
             },
 
             OnChangeCanton() {
                 Loading.fire("Cargando..");
-
                 App.AxiosProvider.EntregaChangeCanton(this.Entity).then(data => {
                     Loading.close();
                     this.DistritoLista = data;
-
                 });
-
-
             },
 
             Save() {
-
                 if (BValidateData(this.Formulario)) {
 
                     Loading.fire("Guardando");
